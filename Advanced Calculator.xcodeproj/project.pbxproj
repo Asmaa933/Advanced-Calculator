@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		766EED4B2516AA2E00D9F837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED4A2516AA2E00D9F837 /* AppDelegate.swift */; };
 		766EED4D2516AA2E00D9F837 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED4C2516AA2E00D9F837 /* SceneDelegate.swift */; };
-		766EED4F2516AA2E00D9F837 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED4E2516AA2E00D9F837 /* ViewController.swift */; };
 		766EED522516AA2E00D9F837 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766EED502516AA2E00D9F837 /* Main.storyboard */; };
 		766EED542516AA3000D9F837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 766EED532516AA3000D9F837 /* Assets.xcassets */; };
 		766EED572516AA3000D9F837 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766EED552516AA3000D9F837 /* LaunchScreen.storyboard */; };
@@ -42,7 +41,6 @@
 		766EED472516AA2E00D9F837 /* Advanced Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Advanced Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		766EED4A2516AA2E00D9F837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		766EED4C2516AA2E00D9F837 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		766EED4E2516AA2E00D9F837 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		766EED512516AA2E00D9F837 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		766EED532516AA3000D9F837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		766EED562516AA3000D9F837 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 			children = (
 				766EED4A2516AA2E00D9F837 /* AppDelegate.swift */,
 				766EED4C2516AA2E00D9F837 /* SceneDelegate.swift */,
-				766EED4E2516AA2E00D9F837 /* ViewController.swift */,
 				766EED502516AA2E00D9F837 /* Main.storyboard */,
 				766EED532516AA3000D9F837 /* Assets.xcassets */,
 				766EED552516AA3000D9F837 /* LaunchScreen.storyboard */,
@@ -305,7 +302,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				766EED852516B5C400D9F837 /* CalculatorVC.swift in Sources */,
-				766EED4F2516AA2E00D9F837 /* ViewController.swift in Sources */,
 				766EED822516AB6600D9F837 /* OperationsStore.swift in Sources */,
 				766EED4B2516AA2E00D9F837 /* AppDelegate.swift in Sources */,
 				766EED882516B62B00D9F837 /* CalculatorViewModel.swift in Sources */,
@@ -492,7 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "esma.Advanced-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -510,7 +506,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "esma.Advanced-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
