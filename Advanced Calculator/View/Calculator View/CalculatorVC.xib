@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculatorVC" customModule="Advanced_Calculator" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="J0r-Cb-ywG" id="ED9-qB-foq"/>
+                <outlet property="equalButton" destination="MMf-jc-8VB" id="2Kn-GK-f25"/>
+                <outlet property="operandTextField" destination="mM8-z7-4Gv" id="N6K-mF-Byl"/>
+                <outlet property="resultLabel" destination="S71-2b-hYR" id="5eX-Ed-hKf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result = 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="S71-2b-hYR">
+                    <rect key="frame" x="8" y="64" width="398" height="26"/>
+                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XIa-4E-xv8" userLabel="operations">
+                    <rect key="frame" x="20" y="160" width="374" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ain-Zj-6ce">
+                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="30"/>
+                            <state key="normal" title="Undo"/>
+                            <connections>
+                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="ddQ-WH-9CP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxn-8E-IfY">
+                            <rect key="frame" x="53.5" y="0.0" width="53.5" height="30"/>
+                            <state key="normal" title="+"/>
+                            <connections>
+                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="YbT-x6-uzt"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9m-5d-ekF">
+                            <rect key="frame" x="107" y="0.0" width="53.5" height="30"/>
+                            <state key="normal" title="-"/>
+                            <connections>
+                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="GW2-3c-DWm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-jV-KiR">
+                            <rect key="frame" x="160.5" y="0.0" width="53" height="30"/>
+                            <state key="normal" title="*"/>
+                            <connections>
+                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="PPv-PU-V18"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKT-hC-e8B">
+                            <rect key="frame" x="213.5" y="0.0" width="53.5" height="30"/>
+                            <state key="normal" title="/"/>
+                            <connections>
+                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="Mqs-u8-Vvw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMf-jc-8VB">
+                            <rect key="frame" x="267" y="0.0" width="53.5" height="30"/>
+                            <state key="normal" title="="/>
+                            <connections>
+                                <action selector="equalButtonPressed:" destination="-1" eventType="touchUpInside" id="Ce2-SY-nfg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gis-Ga-jZN">
+                            <rect key="frame" x="320.5" y="0.0" width="53.5" height="30"/>
+                            <state key="normal" title="Redo"/>
+                            <connections>
+                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="Ln6-HN-Xgf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter the second operand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mM8-z7-4Gv">
+                    <rect key="frame" x="86.5" y="106" width="241.5" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-Cb-ywG">
+                    <rect key="frame" x="0.0" y="210" width="414" height="652"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tyc-lL-NI4">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="S71-2b-hYR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="2F9-C8-VTD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="S71-2b-hYR" secondAttribute="trailing" constant="8" id="9gi-7M-6Dp"/>
+                <constraint firstItem="J0r-Cb-ywG" firstAttribute="top" secondItem="XIa-4E-xv8" secondAttribute="bottom" constant="20" id="BuY-H1-Q6E"/>
+                <constraint firstItem="J0r-Cb-ywG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="FIx-Pm-NWp"/>
+                <constraint firstItem="mM8-z7-4Gv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JaO-Gt-zKm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XIa-4E-xv8" secondAttribute="trailing" constant="20" id="TPf-q2-sNh"/>
+                <constraint firstItem="J0r-Cb-ywG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X7B-ka-K2p"/>
+                <constraint firstItem="mM8-z7-4Gv" firstAttribute="top" secondItem="S71-2b-hYR" secondAttribute="bottom" constant="16" id="fPp-7J-Ev9"/>
+                <constraint firstItem="S71-2b-hYR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="hKA-4B-pMR"/>
+                <constraint firstItem="XIa-4E-xv8" firstAttribute="top" secondItem="mM8-z7-4Gv" secondAttribute="bottom" constant="20" id="mYJ-0S-DbS"/>
+                <constraint firstItem="XIa-4E-xv8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="q2p-JI-C62"/>
+                <constraint firstAttribute="trailing" secondItem="J0r-Cb-ywG" secondAttribute="trailing" id="t0E-Ys-uMl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>
+        </view>
+    </objects>
+</document>

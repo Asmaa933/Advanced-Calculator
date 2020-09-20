@@ -1,15 +1,15 @@
 //
-//  Advanced_CalculatorTests.swift
+//  OpeationsStoreTests.swift
 //  Advanced CalculatorTests
 //
-//  Created by Esma on 9/19/20.
+//  Created by Esma on 9/20/20.
 //  Copyright © 2020 Esma. All rights reserved.
 //
 
 import XCTest
-@testable import Advanced_Calculator
 
-class Advanced_CalculatorTests: XCTestCase {
+@testable import Advanced_Calculator
+class OpeationsStoreTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,6 +22,7 @@ class Advanced_CalculatorTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertNil(nil)
     }
 
     func testPerformanceExample() throws {
