@@ -98,7 +98,7 @@ class CalculatorVC: UIViewController {
         switch sender.tag {
         case 0: // Undo button
             selectedButton = nil
-            viewModel.undoOperation()
+            viewModel.undoOperation(index: 0)
         case 1: //RedoButton
             selectedButton = nil
             viewModel.redoOperation()
@@ -125,6 +125,9 @@ extension CalculatorVC: UICollectionViewDelegate,UICollectionViewDataSource{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OperationCell", for: indexPath) as? OperationCell else {return UICollectionViewCell()}
         cell.text = viewModel.getOperation(atIndex: indexPath)
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.undoOperation(index: indexPath.row)
     }
     
     

@@ -28,8 +28,8 @@ class OperationStore{
     /**
      This function  removes executed  operation to array
      */
-    func removeOperation(){
-        operationsArray.removeFirst()
+    func removeOperation(index: Int){
+        operationsArray.remove(at: index)
     }
     
     /**

@@ -45,15 +45,34 @@ class CalculatorViewModel{
         case "/":
             result /= number
         default:
-            print("default")
+            break
+            
         }
     }
     
     func redoOperation(){
+        let operation = operationStore.getOperatorionsArray()[0]
+        let splitTupple = splitOperationString(operation:operation)
+        operationStore.addOperation(operation: operation)
+        calculate(operation: splitTupple.0, number: splitTupple.1)
         
     }
     
-    func undoOperation(){
+    func undoOperation(index: Int){
+        let splitTupple = splitOperationString(operation: operationStore.getOperatorionsArray()[index])
+        operationStore.removeOperation(index: index)
+        switch splitTupple.0 {
+        case "+":
+            calculate(operation: "-", number: splitTupple.1)
+        case "-":
+            calculate(operation: "+", number: splitTupple.1)
+        case "*":
+            calculate(operation: "/", number: splitTupple.1)
+        case "/":
+            calculate(operation: "*", number: splitTupple.1)
+        default:
+            break
+        }
         
     }
     
@@ -77,10 +96,10 @@ class CalculatorViewModel{
      - operation: String represent arithmetic operator and number
      - returns: Tuple has arithmetic operator and number values
      */
-    func splitOperationString(operation: String) -> (String,Int){
+    func splitOperationString(operation: String) -> (String,Double){
         let splittedArr = operation.split(separator: " ")
         let oper = String(splittedArr.first ?? "")
-        let number = Int(splittedArr[1]) ?? 0
+        let number = Double(splittedArr[1]) ?? 0
         return (oper,number)
     }
     
