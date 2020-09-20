@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76082B472517CB1200A1DA14 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76082B462517CB1200A1DA14 /* StoreTests.swift */; };
 		760EB549251791E100A1EE96 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EB548251791E100A1EE96 /* BorderedView.swift */; };
 		760EB54D251794F900A1EE96 /* OpeationsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */; };
 		76231BEF2517A13B00A3D1B9 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */; };
@@ -42,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		76082B462517CB1200A1DA14 /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StoreTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/StoreTests.swift"; sourceTree = "<group>"; };
 		760EB548251791E100A1EE96 /* BorderedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BorderedView.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Custom View/BorderedView.swift"; sourceTree = "<group>"; };
 		760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpeationsStoreTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OpeationsStoreTests.swift"; sourceTree = "<group>"; };
 		76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorVC.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.swift"; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 			children = (
 				760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */,
 				766EED632516AA3100D9F837 /* Info.plist */,
-				76082B462517CB1200A1DA14 /* StoreTests.swift */,
 			);
 			path = "Advanced CalculatorTests";
 			sourceTree = "<group>";
@@ -345,7 +342,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				760EB54D251794F900A1EE96 /* OpeationsStoreTests.swift in Sources */,
-				76082B472517CB1200A1DA14 /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
