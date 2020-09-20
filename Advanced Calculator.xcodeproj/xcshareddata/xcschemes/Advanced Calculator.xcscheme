@@ -56,6 +56,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "766EED5C2516AA3100D9F837"
+               BuildableName = "Advanced CalculatorTests.xctest"
+               BlueprintName = "Advanced CalculatorTests"
+               ReferencedContainer = "container:Advanced Calculator.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "766EED672516AA3100D9F837"
+               BuildableName = "Advanced CalculatorUITests.xctest"
+               BlueprintName = "Advanced CalculatorUITests"
+               ReferencedContainer = "container:Advanced Calculator.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
