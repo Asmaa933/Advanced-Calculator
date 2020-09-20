@@ -13,16 +13,22 @@ class CalculatorVC: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet var operandTextField: UITextField!
-    
     @IBOutlet private var equalButton: UIButton!
-    
-    private var selectedButton: UIButton?
+    @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var redoButton: UIButton!
+    private var selectedButton: UIButton?{
+        didSet{
+            oldValue?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            selectedButton?.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        }
+    }
     private lazy var viewModel: CalculatorViewModel = {
         return CalculatorViewModel()
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupTextField()
         initViewModel()
     }
     
@@ -35,44 +41,77 @@ class CalculatorVC: UIViewController {
         
     }
     
+    private func setupTextField(){
+        operandTextField.addTarget(self, action: #selector(checkTextField), for: .editingChanged)
+    }
+    
+    @objc private func checkTextField(){
+        if (operandTextField.text?.isEmpty ?? false){
+            equalButton.isEnabled = false
+        }else{
+            if selectedButton != nil{
+                equalButton.isEnabled = true
+            }
+        }
+        
+    }
+    
     private func initViewModel(){
         viewModel.updateUIClosure = { [weak self] () in
-            guard let self = self else {return}
-            self.resultLabel.text = self.viewModel.getResult()
-            self.operandTextField.text = ""
-            self.selectedButton?.backgroundColor = .white
-            self.collectionView.reloadData()
+            self?.updateUI()
         }
         
         
         viewModel.showAlertClosure = {[weak self] () in
-            guard let self = self else {return}
-            self.showAlert(message: self.viewModel.errorMessage)
+            self?.showAlert(message: self?.viewModel.errorMessage)
+            
         }
+    }
+    
+    private func updateUI(){
+        resultLabel.text = self.viewModel.getResult()
+        operandTextField.text = ""
+        equalButton.isEnabled = false
+        redoButton.isEnabled = viewModel.getOperationArrCount() == 0 ? false : true
+        undoButton.isEnabled = viewModel.getOperationArrCount() == 0 ? false : true
+        selectedButton = nil
+        collectionView.reloadData()
     }
     
     private func showAlert(message: String?){
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "ok", style: .cancel) {[weak self] (_) in
+            self?.updateUIWhileError()
+        }
+        alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
     
+    private func updateUIWhileError(){
+        operandTextField.text = ""
+        equalButton.isEnabled = false
+        selectedButton = nil
+    }
+    
     @IBAction func operationButtonPressed(_ sender: UIButton) {
-        selectedButton?.backgroundColor = .white
+        operandTextField.resignFirstResponder()
         switch sender.tag {
-        case 0:
-            break
-        case 1:
-            break
-        default:
+        case 0: // Undo button
+            selectedButton = nil
+            viewModel.undoOperation()
+        case 1: //RedoButton
+            selectedButton = nil
+            viewModel.redoOperation()
+        default: // Arithmatic operations
             selectedButton = sender
-            sender.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
-            equalButton.isEnabled = false
+            equalButton.isEnabled = operandTextField.text?.isEmpty ?? false ? false : true
         }
         
     }
     @IBAction func equalButtonPressed(_ sender: UIButton) {
         guard let operand = operandTextField.text else {return}
         guard let oper = selectedButton?.titleLabel?.text else {return}
+        operandTextField.resignFirstResponder()
         viewModel.executeOperation(operation: oper, secondOperand: operand)
     }
     

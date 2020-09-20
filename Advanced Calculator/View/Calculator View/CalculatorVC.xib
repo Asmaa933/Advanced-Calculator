@@ -7,12 +7,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculatorVC" customModule="Advanced_Calculator" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculatorVC" customModule="Calculator" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="J0r-Cb-ywG" id="ED9-qB-foq"/>
                 <outlet property="equalButton" destination="MMf-jc-8VB" id="2Kn-GK-f25"/>
                 <outlet property="operandTextField" destination="mM8-z7-4Gv" id="N6K-mF-Byl"/>
+                <outlet property="redoButton" destination="gis-Ga-jZN" id="Axt-S4-fTJ"/>
                 <outlet property="resultLabel" destination="S71-2b-hYR" id="5eX-Ed-hKf"/>
+                <outlet property="undoButton" destination="ain-Zj-6ce" id="joF-8x-hb4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,7 +32,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XIa-4E-xv8" userLabel="operations">
                     <rect key="frame" x="20" y="160" width="374" height="34"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ain-Zj-6ce">
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ain-Zj-6ce">
                             <rect key="frame" x="0.0" y="0.0" width="53.5" height="34"/>
                             <state key="normal" title="Undo"/>
                             <connections>
@@ -77,7 +79,7 @@
                                 <action selector="equalButtonPressed:" destination="-1" eventType="touchUpInside" id="Ce2-SY-nfg"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gis-Ga-jZN">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gis-Ga-jZN">
                             <rect key="frame" x="320.5" y="0.0" width="53.5" height="34"/>
                             <state key="normal" title="Redo"/>
                             <connections>

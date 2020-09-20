@@ -33,26 +33,12 @@ class OperationStore{
     }
     
     /**
-     This function splits arithmetic operator from number
-     ## Important Notes ##
-     1. operation parameters be like  "+ 5".
-     - parameters:
-     - operation: String represent arithmetic operator and number
-     - returns: Tuple has arithmetic operator and number values
-     */
-    func splitOperationString(operation: String) -> (String,Int){
-       let splittedArr = operation.split(separator: " ")
-        let oper = String(splittedArr.first ?? "")
-        let number = Int(splittedArr[1]) ?? 0
-        return (oper,number)
-    }
-    
-    /**
      This function returns the operations which executed
      - returns: executed operations
      */
     func getOperatorionsArray() -> [String]{
         return operationsArray
+
     }
     
     
