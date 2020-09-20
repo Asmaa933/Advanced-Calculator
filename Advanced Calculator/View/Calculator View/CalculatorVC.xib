@@ -28,52 +28,57 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XIa-4E-xv8" userLabel="operations">
-                    <rect key="frame" x="20" y="160" width="374" height="30"/>
+                    <rect key="frame" x="20" y="160" width="374" height="34"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ain-Zj-6ce">
-                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="34"/>
                             <state key="normal" title="Undo"/>
                             <connections>
                                 <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="ddQ-WH-9CP"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxn-8E-IfY">
-                            <rect key="frame" x="53.5" y="0.0" width="53.5" height="30"/>
+                            <rect key="frame" x="53.5" y="0.0" width="53.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="+"/>
                             <connections>
                                 <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="YbT-x6-uzt"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9m-5d-ekF">
-                            <rect key="frame" x="107" y="0.0" width="53.5" height="30"/>
+                            <rect key="frame" x="107" y="0.0" width="53.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="-"/>
                             <connections>
                                 <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="GW2-3c-DWm"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-jV-KiR">
-                            <rect key="frame" x="160.5" y="0.0" width="53" height="30"/>
+                            <rect key="frame" x="160.5" y="0.0" width="53" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="*"/>
                             <connections>
                                 <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="PPv-PU-V18"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKT-hC-e8B">
-                            <rect key="frame" x="213.5" y="0.0" width="53.5" height="30"/>
+                            <rect key="frame" x="213.5" y="0.0" width="53.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="/"/>
                             <connections>
                                 <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="Mqs-u8-Vvw"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="6" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMf-jc-8VB">
-                            <rect key="frame" x="267" y="0.0" width="53.5" height="30"/>
+                            <rect key="frame" x="267" y="0.0" width="53.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="="/>
                             <connections>
                                 <action selector="equalButtonPressed:" destination="-1" eventType="touchUpInside" id="Ce2-SY-nfg"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gis-Ga-jZN">
-                            <rect key="frame" x="320.5" y="0.0" width="53.5" height="30"/>
+                            <rect key="frame" x="320.5" y="0.0" width="53.5" height="34"/>
                             <state key="normal" title="Redo"/>
                             <connections>
                                 <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="Ln6-HN-Xgf"/>
@@ -87,7 +92,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-Cb-ywG">
-                    <rect key="frame" x="0.0" y="210" width="414" height="652"/>
+                    <rect key="frame" x="0.0" y="214" width="414" height="648"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tyc-lL-NI4">
                         <size key="itemSize" width="128" height="128"/>

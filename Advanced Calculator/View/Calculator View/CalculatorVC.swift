@@ -57,6 +57,7 @@ class CalculatorVC: UIViewController {
     }
     
     @IBAction func operationButtonPressed(_ sender: UIButton) {
+        selectedButton?.backgroundColor = .white
         switch sender.tag {
         case 0:
             break
