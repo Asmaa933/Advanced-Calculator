@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -12,6 +12,7 @@
                 <outlet property="collectionView" destination="J0r-Cb-ywG" id="ED9-qB-foq"/>
                 <outlet property="equalButton" destination="MMf-jc-8VB" id="2Kn-GK-f25"/>
                 <outlet property="operandTextField" destination="mM8-z7-4Gv" id="N6K-mF-Byl"/>
+                <outlet property="operationView" destination="fyj-rV-L4w" id="Lkq-my-ocF"/>
                 <outlet property="redoButton" destination="gis-Ga-jZN" id="Axt-S4-fTJ"/>
                 <outlet property="resultLabel" destination="S71-2b-hYR" id="5eX-Ed-hKf"/>
                 <outlet property="undoButton" destination="ain-Zj-6ce" id="joF-8x-hb4"/>
@@ -23,78 +24,95 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result = 0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="S71-2b-hYR">
-                    <rect key="frame" x="8" y="64" width="398" height="20.5"/>
-                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XIa-4E-xv8" userLabel="operations">
-                    <rect key="frame" x="20" y="154.5" width="374" height="34"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyj-rV-L4w">
+                    <rect key="frame" x="0.0" y="44" width="414" height="161.5"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ain-Zj-6ce">
-                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="34"/>
-                            <state key="normal" title="Undo"/>
-                            <connections>
-                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="ddQ-WH-9CP"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxn-8E-IfY">
-                            <rect key="frame" x="53.5" y="0.0" width="53.5" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="+"/>
-                            <connections>
-                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="YbT-x6-uzt"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9m-5d-ekF">
-                            <rect key="frame" x="107" y="0.0" width="53.5" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="-"/>
-                            <connections>
-                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="GW2-3c-DWm"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-jV-KiR">
-                            <rect key="frame" x="160.5" y="0.0" width="53" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="*"/>
-                            <connections>
-                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="PPv-PU-V18"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKT-hC-e8B">
-                            <rect key="frame" x="213.5" y="0.0" width="53.5" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="/"/>
-                            <connections>
-                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="Mqs-u8-Vvw"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="6" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMf-jc-8VB">
-                            <rect key="frame" x="267" y="0.0" width="53.5" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="="/>
-                            <connections>
-                                <action selector="equalButtonPressed:" destination="-1" eventType="touchUpInside" id="Ce2-SY-nfg"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gis-Ga-jZN">
-                            <rect key="frame" x="320.5" y="0.0" width="53.5" height="34"/>
-                            <state key="normal" title="Redo"/>
-                            <connections>
-                                <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="Ln6-HN-Xgf"/>
-                            </connections>
-                        </button>
+                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter the second operand" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mM8-z7-4Gv">
+                            <rect key="frame" x="52" y="56.5" width="310.5" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result = 0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="S71-2b-hYR">
+                            <rect key="frame" x="8" y="20" width="398" height="20.5"/>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XIa-4E-xv8" userLabel="operations">
+                            <rect key="frame" x="16" y="110.5" width="382" height="34"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ain-Zj-6ce">
+                                    <rect key="frame" x="0.0" y="0.0" width="54.5" height="34"/>
+                                    <state key="normal" title="Undo"/>
+                                    <connections>
+                                        <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="ddQ-WH-9CP"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxn-8E-IfY">
+                                    <rect key="frame" x="54.5" y="0.0" width="54.5" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="+"/>
+                                    <connections>
+                                        <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="YbT-x6-uzt"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9m-5d-ekF">
+                                    <rect key="frame" x="109" y="0.0" width="54.5" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="-"/>
+                                    <connections>
+                                        <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="GW2-3c-DWm"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-jV-KiR">
+                                    <rect key="frame" x="163.5" y="0.0" width="55" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="*"/>
+                                    <connections>
+                                        <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="PPv-PU-V18"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKT-hC-e8B">
+                                    <rect key="frame" x="218.5" y="0.0" width="54.5" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="/"/>
+                                    <connections>
+                                        <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="Mqs-u8-Vvw"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMf-jc-8VB">
+                                    <rect key="frame" x="273" y="0.0" width="54.5" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="="/>
+                                    <connections>
+                                        <action selector="equalButtonPressed:" destination="-1" eventType="touchUpInside" id="Ce2-SY-nfg"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gis-Ga-jZN">
+                                    <rect key="frame" x="327.5" y="0.0" width="54.5" height="34"/>
+                                    <state key="normal" title="Redo"/>
+                                    <connections>
+                                        <action selector="operationButtonPressed:" destination="-1" eventType="touchUpInside" id="Ln6-HN-Xgf"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
-                </stackView>
-                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter the second operand" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mM8-z7-4Gv">
-                    <rect key="frame" x="52" y="100.5" width="310.5" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
-                </textField>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="XIa-4E-xv8" secondAttribute="trailing" constant="16" id="200-2z-dl8"/>
+                        <constraint firstItem="XIa-4E-xv8" firstAttribute="top" secondItem="mM8-z7-4Gv" secondAttribute="bottom" constant="20" id="4Yx-Se-2YB"/>
+                        <constraint firstItem="mM8-z7-4Gv" firstAttribute="centerX" secondItem="fyj-rV-L4w" secondAttribute="centerX" id="JiJ-u2-R8k"/>
+                        <constraint firstItem="mM8-z7-4Gv" firstAttribute="top" secondItem="S71-2b-hYR" secondAttribute="bottom" constant="16" id="NCa-zb-UvZ"/>
+                        <constraint firstAttribute="trailing" secondItem="S71-2b-hYR" secondAttribute="trailing" constant="8" id="Sl5-FA-2DA"/>
+                        <constraint firstItem="XIa-4E-xv8" firstAttribute="leading" secondItem="fyj-rV-L4w" secondAttribute="leading" constant="16" id="YIC-Ed-FLc"/>
+                        <constraint firstItem="S71-2b-hYR" firstAttribute="top" secondItem="fyj-rV-L4w" secondAttribute="top" constant="20" id="YWZ-4K-rkN"/>
+                        <constraint firstItem="S71-2b-hYR" firstAttribute="leading" secondItem="fyj-rV-L4w" secondAttribute="leading" constant="8" id="tEW-4E-3sd"/>
+                        <constraint firstItem="mM8-z7-4Gv" firstAttribute="width" secondItem="fyj-rV-L4w" secondAttribute="width" multiplier="0.75" id="xy0-Gp-p8d"/>
+                    </constraints>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-Cb-ywG">
-                    <rect key="frame" x="0.0" y="208.5" width="414" height="653.5"/>
+                    <rect key="frame" x="0.0" y="205.5" width="414" height="656.5"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tyc-lL-NI4">
                         <size key="itemSize" width="128" height="128"/>
@@ -106,19 +124,14 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="S71-2b-hYR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="2F9-C8-VTD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="S71-2b-hYR" secondAttribute="trailing" constant="8" id="9gi-7M-6Dp"/>
-                <constraint firstItem="J0r-Cb-ywG" firstAttribute="top" secondItem="XIa-4E-xv8" secondAttribute="bottom" constant="20" id="BuY-H1-Q6E"/>
+                <constraint firstItem="J0r-Cb-ywG" firstAttribute="top" secondItem="fyj-rV-L4w" secondAttribute="bottom" id="Bii-Vk-alh"/>
+                <constraint firstItem="fyj-rV-L4w" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.39" id="CRQ-04-qeq"/>
                 <constraint firstItem="J0r-Cb-ywG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="FIx-Pm-NWp"/>
-                <constraint firstItem="mM8-z7-4Gv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JaO-Gt-zKm"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XIa-4E-xv8" secondAttribute="trailing" constant="20" id="TPf-q2-sNh"/>
                 <constraint firstItem="J0r-Cb-ywG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X7B-ka-K2p"/>
-                <constraint firstItem="mM8-z7-4Gv" firstAttribute="top" secondItem="S71-2b-hYR" secondAttribute="bottom" constant="16" id="fPp-7J-Ev9"/>
-                <constraint firstItem="S71-2b-hYR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="hKA-4B-pMR"/>
-                <constraint firstItem="XIa-4E-xv8" firstAttribute="top" secondItem="mM8-z7-4Gv" secondAttribute="bottom" constant="20" id="mYJ-0S-DbS"/>
-                <constraint firstItem="XIa-4E-xv8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="q2p-JI-C62"/>
+                <constraint firstItem="fyj-rV-L4w" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="e2p-mJ-GeG"/>
+                <constraint firstItem="fyj-rV-L4w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iN4-C5-Jr7"/>
+                <constraint firstItem="fyj-rV-L4w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nS0-IJ-rqU"/>
                 <constraint firstAttribute="trailing" secondItem="J0r-Cb-ywG" secondAttribute="trailing" id="t0E-Ys-uMl"/>
-                <constraint firstItem="mM8-z7-4Gv" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.75" id="w9t-6Y-O7R"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>

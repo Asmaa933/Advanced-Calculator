@@ -10,6 +10,7 @@ import UIKit
 
 class CalculatorVC: UIViewController {
     
+    @IBOutlet var operationView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet var operandTextField: UITextField!
@@ -22,13 +23,13 @@ class CalculatorVC: UIViewController {
             selectedButton?.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         }
     }
+    
     private lazy var viewModel: CalculatorViewModel = {
         return CalculatorViewModel()
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
-        setupTextField()
+        setupView()
         initViewModel()
     }
     
@@ -41,8 +42,15 @@ class CalculatorVC: UIViewController {
         
     }
     
-    private func setupTextField(){
+    private func setupView(){
+        setupCollectionView()
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        operationView.addGestureRecognizer(gesture)
         operandTextField.addTarget(self, action: #selector(checkTextField), for: .editingChanged)
+    }
+    
+    @objc private func dismissKeyboard(){
+        operandTextField.resignFirstResponder()
     }
     
     @objc private func checkTextField(){
@@ -95,7 +103,7 @@ class CalculatorVC: UIViewController {
     }
     
     @IBAction func operationButtonPressed(_ sender: UIButton) {
-        operandTextField.resignFirstResponder()
+        dismissKeyboard()
         switch sender.tag {
         case 0: // Undo button
             selectedButton = nil
@@ -113,7 +121,7 @@ class CalculatorVC: UIViewController {
     @IBAction func equalButtonPressed(_ sender: UIButton) {
         guard let operand = operandTextField.text else {return}
         guard let oper = selectedButton?.titleLabel?.text else {return}
-        operandTextField.resignFirstResponder()
+        dismissKeyboard()
         viewModel.executeOperation(operation: oper, secondOperand: operand)
     }
     
@@ -126,15 +134,15 @@ extension CalculatorVC: UICollectionViewDelegate{
 
 extension CalculatorVC: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          return viewModel.getOperationArrCount()
-      }
-      
-      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-          guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OperationCell", for: indexPath) as? OperationCell else {return UICollectionViewCell()}
-          cell.text = viewModel.getOperation(atIndex: indexPath)
-          return cell
-      }
-}
-extension CalculatorVC: UICollectionViewDelegateFlowLayout{
+        return viewModel.getOperationArrCount()
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OperationCell", for: indexPath) as? OperationCell else {return UICollectionViewCell()}
+        cell.text = viewModel.getOperation(atIndex: indexPath)
+        return cell
+    }
 }
+//extension CalculatorVC: UICollectionViewDelegateFlowLayout{
+//
+//}

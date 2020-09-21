@@ -25,12 +25,16 @@ class CalculatorViewModel{
     }
     
     func executeOperation(operation: String, secondOperand: String){
-        guard let number = Double(secondOperand) else {return}
+        guard let number = Double(secondOperand) else {
+            errorMessage = "Error in number"
+            return
+        }
+        
         if operation == "/" && number == 0 {
             errorMessage = "Can't divide on 0"
             return
         }
-        operationStore.addOperation(operation: "\(operation) \(secondOperand)")
+        operationStore.addOperation(operation: "\(operation) \(number.stringWithoutZeroFraction)")
         calculate(operation: operation, number: number)
     }
     
