@@ -139,7 +139,7 @@ extension CalculatorVC: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OperationCell", for: indexPath) as? OperationCell else {return UICollectionViewCell()}
-        cell.text = viewModel.getOperation(atIndex: indexPath)
+        cell.text = viewModel.getOperation(index: indexPath.row)
         return cell
     }
 }

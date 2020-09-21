@@ -22,6 +22,8 @@
 		766EED882516B62B00D9F837 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED872516B62B00D9F837 /* CalculatorViewModel.swift */; };
 		769359FB25179C09000BF7F7 /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769359F925179C09000BF7F7 /* OperationCell.swift */; };
 		769359FC25179C09000BF7F7 /* OperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769359FA25179C09000BF7F7 /* OperationCell.xib */; };
+		76DD4359251908D8001CFA36 /* CalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */; };
+		76DD436425192A94001CFA36 /* OperationVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD436325192A94001CFA36 /* OperationVCTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 		766EED872516B62B00D9F837 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		769359F925179C09000BF7F7 /* OperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperationCell.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/OperationCell.swift"; sourceTree = "<group>"; };
 		769359FA25179C09000BF7F7 /* OperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OperationCell.xib; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/OperationCell.xib"; sourceTree = "<group>"; };
+		76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorViewModelTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/CalculatorViewModelTests.swift"; sourceTree = "<group>"; };
+		76DD435F25190A21001CFA36 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		76DD436325192A94001CFA36 /* OperationVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperationVCTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OperationVCTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +129,7 @@
 				766EED602516AA3100D9F837 /* Advanced CalculatorTests */,
 				766EED6B2516AA3100D9F837 /* Advanced CalculatorUITests */,
 				766EED482516AA2E00D9F837 /* Products */,
+				76DD435A251909F7001CFA36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */,
+				76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */,
+				76DD436325192A94001CFA36 /* OperationVCTests.swift */,
 				766EED632516AA3100D9F837 /* Info.plist */,
 			);
 			path = "Advanced CalculatorTests";
@@ -203,6 +211,14 @@
 				766EED812516AB6600D9F837 /* OperationsStore.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		76DD435A251909F7001CFA36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76DD435F25190A21001CFA36 /* XCTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,7 +369,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76DD4359251908D8001CFA36 /* CalculatorViewModelTests.swift in Sources */,
 				760EB54D251794F900A1EE96 /* OpeationsStoreTests.swift in Sources */,
+				76DD436425192A94001CFA36 /* OperationVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

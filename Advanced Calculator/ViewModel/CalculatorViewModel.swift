@@ -88,8 +88,8 @@ class CalculatorViewModel{
         return operationStore.getOperatorionsArray().count
     }
     
-    func getOperation(atIndex: IndexPath) -> String {
-        return operationStore.getOperatorionsArray()[atIndex.row]
+    func getOperation(index: Int) -> String {
+        return operationStore.getOperatorionsArray()[index]
     }
     
     /**

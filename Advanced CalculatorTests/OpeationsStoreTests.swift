@@ -10,26 +10,41 @@ import XCTest
 @testable import Calculator
 
 class OpeationsStoreTests: XCTestCase {
-
+    var operationStore: OperationStore!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        operationStore = OperationStore.shared
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        operationStore = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertNil(nil)
+    
+    /**
+     This function tests addOperation function
+     */
+    func testAddOperation(){
+        operationStore.addOperation(operation: "+ 5")
+        operationStore.addOperation(operation: "* 9")
+        XCTAssertNotNil(operationStore.getOperatorionsArray)
+        XCTAssertTrue(operationStore.getOperatorionsArray().count == 2)
+        XCTAssertEqual(operationStore.getOperatorionsArray()[0], "* 9")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    /**
+    This function tests remove operation function
+    */
+    func testRemoveOperation(){
+        operationStore.addOperation(operation: "+ 5")
+        operationStore.addOperation(operation: "* 9")
+        operationStore.addOperation(operation: "+ 30")
+        operationStore.addOperation(operation: "+ 10")
+        operationStore.removeOperation(index: 0)
+        XCTAssertTrue(operationStore.getOperatorionsArray().count == 3)
+        XCTAssertEqual(operationStore.getOperatorionsArray()[0], "+ 30")
+        operationStore.removeOperation(index: 1)
+        XCTAssertTrue(operationStore.getOperatorionsArray().count == 2)
+        XCTAssertEqual(operationStore.getOperatorionsArray().first ?? "" , "+ 30")
+        XCTAssertEqual(operationStore.getOperatorionsArray().last ?? "", "+ 5")
     }
-
 }
