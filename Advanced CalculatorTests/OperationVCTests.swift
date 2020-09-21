@@ -16,14 +16,12 @@ class OperationVCTests: XCTestCase {
     
     override func setUpWithError() throws {
         viewModel = CalculatorViewModel()
-        
     }
     
     override func tearDownWithError() throws {
         viewModel = nil
         
     }
-    
     
     /**
      This function tests execute opetation  function
