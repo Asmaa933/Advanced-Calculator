@@ -77,7 +77,7 @@ class CalculatorViewModel{
     }
     
     func getResult() -> String{
-        return "Result = \(result)"
+        return "Result = \(result.stringWithoutZeroFraction)"
     }
     
     func getOperationArrCount() -> Int{

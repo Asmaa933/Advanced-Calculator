@@ -38,10 +38,5 @@ class OperationStore{
      */
     func getOperatorionsArray() -> [String]{
         return operationsArray
-
     }
-    
-    
-    
-    
 }

@@ -70,26 +70,27 @@ class CalculatorVC: UIViewController {
     
     private func updateUI(){
         resultLabel.text = self.viewModel.getResult()
-        operandTextField.text = ""
-        equalButton.isEnabled = false
+        resetInputs()
         redoButton.isEnabled = viewModel.getOperationArrCount() == 0 ? false : true
         undoButton.isEnabled = viewModel.getOperationArrCount() == 0 ? false : true
-        selectedButton = nil
         collectionView.reloadData()
+        collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .centeredVertically)
     }
     
     private func showAlert(message: String?){
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "ok", style: .cancel) {[weak self] (_) in
-            self?.updateUIWhileError()
+            self?.resetInputs()
         }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
     
-    private func updateUIWhileError(){
+    private func resetInputs(){
         operandTextField.text = ""
+        operandTextField.isEnabled = false
         equalButton.isEnabled = false
+        
         selectedButton = nil
     }
     
@@ -104,6 +105,7 @@ class CalculatorVC: UIViewController {
             viewModel.redoOperation()
         default: // Arithmatic operations
             selectedButton = sender
+            operandTextField.isEnabled = true
             equalButton.isEnabled = operandTextField.text?.isEmpty ?? false ? false : true
         }
         
@@ -116,19 +118,23 @@ class CalculatorVC: UIViewController {
     }
     
 }
-extension CalculatorVC: UICollectionViewDelegate,UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getOperationArrCount()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OperationCell", for: indexPath) as? OperationCell else {return UICollectionViewCell()}
-        cell.text = viewModel.getOperation(atIndex: indexPath)
-        return cell
-    }
+extension CalculatorVC: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.undoOperation(index: indexPath.row)
     }
-    
+}
+
+extension CalculatorVC: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+          return viewModel.getOperationArrCount()
+      }
+      
+      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+          guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OperationCell", for: indexPath) as? OperationCell else {return UICollectionViewCell()}
+          cell.text = viewModel.getOperation(atIndex: indexPath)
+          return cell
+      }
+}
+extension CalculatorVC: UICollectionViewDelegateFlowLayout{
     
 }

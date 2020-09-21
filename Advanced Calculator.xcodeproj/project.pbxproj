@@ -11,6 +11,7 @@
 		760EB54D251794F900A1EE96 /* OpeationsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */; };
 		76231BEF2517A13B00A3D1B9 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */; };
 		76231BF02517A13B00A3D1B9 /* CalculatorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76231BEE2517A13B00A3D1B9 /* CalculatorVC.xib */; };
+		76398D97251822E400312C1F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76398D96251822E400312C1F /* Extensions.swift */; };
 		766EED4B2516AA2E00D9F837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED4A2516AA2E00D9F837 /* AppDelegate.swift */; };
 		766EED4D2516AA2E00D9F837 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED4C2516AA2E00D9F837 /* SceneDelegate.swift */; };
 		766EED522516AA2E00D9F837 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766EED502516AA2E00D9F837 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpeationsStoreTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OpeationsStoreTests.swift"; sourceTree = "<group>"; };
 		76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorVC.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.swift"; sourceTree = "<group>"; };
 		76231BEE2517A13B00A3D1B9 /* CalculatorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CalculatorVC.xib; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.xib"; sourceTree = "<group>"; };
+		76398D96251822E400312C1F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Extension/Extensions.swift"; sourceTree = "<group>"; };
 		766EED472516AA2E00D9F837 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		766EED4A2516AA2E00D9F837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		766EED4C2516AA2E00D9F837 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76398D95251822B600312C1F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				76398D96251822E400312C1F /* Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		764469FD2517903800CCC9B5 /* Calculator View */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 				766EED802516AB4900D9F837 /* Model */,
 				766EED7D2516AB2900D9F837 /* View */,
 				766EED7C2516AB1D00D9F837 /* ViewModel */,
+				76398D95251822B600312C1F /* Extension */,
 				766EED7B2516AB0A00D9F837 /* Supporting files */,
 				766EED582516AA3000D9F837 /* Info.plist */,
 			);
@@ -330,6 +341,7 @@
 				76231BEF2517A13B00A3D1B9 /* CalculatorVC.swift in Sources */,
 				760EB549251791E100A1EE96 /* BorderedView.swift in Sources */,
 				766EED822516AB6600D9F837 /* OperationsStore.swift in Sources */,
+				76398D97251822E400312C1F /* Extensions.swift in Sources */,
 				766EED4B2516AA2E00D9F837 /* AppDelegate.swift in Sources */,
 				769359FB25179C09000BF7F7 /* OperationCell.swift in Sources */,
 				766EED882516B62B00D9F837 /* CalculatorViewModel.swift in Sources */,
