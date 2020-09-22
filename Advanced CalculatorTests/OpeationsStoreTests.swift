@@ -10,41 +10,50 @@ import XCTest
 @testable import Calculator
 
 class OpeationsStoreTests: XCTestCase {
-    var operationStore: OperationStore!
+    var operationsArr: [String]!
     
     override func setUpWithError() throws {
-        operationStore = OperationStore.shared
+        operationsArr = [String]()
     }
     
     override func tearDownWithError() throws {
-        operationStore = nil
+        operationsArr = nil
+    }
+    
+    func skip_addInArray(operation: String){
+        operationsArr.insert(operation, at: 0)
+    }
+    
+    func skip_removeFromArr(index: Int)  {
+        operationsArr.remove(at: index)
     }
     
     /**
      This function tests addOperation function
      */
     func testAddOperation(){
-        operationStore.addOperation(operation: "+ 5")
-        operationStore.addOperation(operation: "* 9")
-        XCTAssertNotNil(operationStore.getOperatorionsArray)
-        XCTAssertTrue(operationStore.getOperatorionsArray().count == 2)
-        XCTAssertEqual(operationStore.getOperatorionsArray()[0], "* 9")
+        skip_addInArray(operation: "+ 5")
+        skip_addInArray(operation: "* 9")
+        
+        XCTAssertNotNil(operationsArr)
+        XCTAssertTrue(operationsArr.count == 2)
+        XCTAssertEqual(operationsArr[0], "* 9")
     }
     
     /**
-    This function tests remove operation function
-    */
+     This function tests remove operation function
+     */
     func testRemoveOperation(){
-        operationStore.addOperation(operation: "+ 5")
-        operationStore.addOperation(operation: "* 9")
-        operationStore.addOperation(operation: "+ 30")
-        operationStore.addOperation(operation: "+ 10")
-        operationStore.removeOperation(index: 0)
-        XCTAssertTrue(operationStore.getOperatorionsArray().count == 3)
-        XCTAssertEqual(operationStore.getOperatorionsArray()[0], "+ 30")
-        operationStore.removeOperation(index: 1)
-        XCTAssertTrue(operationStore.getOperatorionsArray().count == 2)
-        XCTAssertEqual(operationStore.getOperatorionsArray().first ?? "" , "+ 30")
-        XCTAssertEqual(operationStore.getOperatorionsArray().last ?? "", "+ 5")
+        skip_addInArray(operation: "+ 5")
+        skip_addInArray(operation: "* 9")
+        skip_addInArray(operation: "+ 30")
+        skip_addInArray(operation: "+ 10")
+        skip_removeFromArr(index: 0)
+        XCTAssertTrue(operationsArr.count == 3)
+        XCTAssertEqual(operationsArr[0], "+ 30")
+        skip_removeFromArr(index: 1)
+        XCTAssertTrue(operationsArr.count == 2)
+        XCTAssertEqual(operationsArr.first ?? "" , "+ 30")
+        XCTAssertEqual(operationsArr.last ?? "", "+ 5")
     }
 }
