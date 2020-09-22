@@ -45,31 +45,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		760EB548251791E100A1EE96 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BorderedLabel.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Custom View/BorderedLabel.swift"; sourceTree = "<group>"; };
-		760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpeationsStoreTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OpeationsStoreTests.swift"; sourceTree = "<group>"; };
-		76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorVC.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.swift"; sourceTree = "<group>"; };
-		76231BEE2517A13B00A3D1B9 /* CalculatorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CalculatorVC.xib; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.xib"; sourceTree = "<group>"; };
-		76398D96251822E400312C1F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Extension/Extensions.swift"; sourceTree = "<group>"; };
+		760EB548251791E100A1EE96 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BorderedLabel.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Custom View/../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Custom View/BorderedLabel.swift"; sourceTree = "<absolute>"; };
+		760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpeationsStoreTests.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OpeationsStoreTests.swift"; sourceTree = "<absolute>"; };
+		76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorVC.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.swift"; sourceTree = "<absolute>"; };
+		76231BEE2517A13B00A3D1B9 /* CalculatorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CalculatorVC.xib; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.xib"; sourceTree = "<absolute>"; };
+		76398D96251822E400312C1F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Extension/../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Extension/Extensions.swift"; sourceTree = "<absolute>"; };
 		766EED472516AA2E00D9F837 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		766EED4A2516AA2E00D9F837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		766EED4C2516AA2E00D9F837 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		766EED4A2516AA2E00D9F837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Supporting files/AppDelegate.swift"; sourceTree = "<absolute>"; };
+		766EED4C2516AA2E00D9F837 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Supporting files/SceneDelegate.swift"; sourceTree = "<absolute>"; };
 		766EED512516AA2E00D9F837 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		766EED532516AA3000D9F837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		766EED532516AA3000D9F837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Supporting files/Assets.xcassets"; sourceTree = "<absolute>"; };
 		766EED562516AA3000D9F837 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		766EED582516AA3000D9F837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		766EED582516AA3000D9F837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Info.plist"; sourceTree = "<absolute>"; };
 		766EED5D2516AA3100D9F837 /* Advanced CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Advanced CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		766EED632516AA3100D9F837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		766EED632516AA3100D9F837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/Info.plist"; sourceTree = "<absolute>"; };
 		766EED682516AA3100D9F837 /* Advanced CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Advanced CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		766EED6C2516AA3100D9F837 /* Advanced_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advanced_CalculatorUITests.swift; sourceTree = "<group>"; };
-		766EED6E2516AA3100D9F837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		766EED812516AB6600D9F837 /* OperationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsStore.swift; sourceTree = "<group>"; };
-		766EED872516B62B00D9F837 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
-		769359F925179C09000BF7F7 /* OperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperationCell.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/OperationCell.swift"; sourceTree = "<group>"; };
-		769359FA25179C09000BF7F7 /* OperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OperationCell.xib; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/OperationCell.xib"; sourceTree = "<group>"; };
-		76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorViewModelTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/CalculatorViewModelTests.swift"; sourceTree = "<group>"; };
+		766EED6C2516AA3100D9F837 /* Advanced_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Advanced_CalculatorUITests.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorUITests/Advanced_CalculatorUITests.swift"; sourceTree = "<absolute>"; };
+		766EED6E2516AA3100D9F837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorUITests/Info.plist"; sourceTree = "<absolute>"; };
+		766EED812516AB6600D9F837 /* OperationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperationsStore.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Model/OperationsStore.swift"; sourceTree = "<absolute>"; };
+		766EED872516B62B00D9F837 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorViewModel.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/ViewModel/CalculatorViewModel.swift"; sourceTree = "<absolute>"; };
+		769359F925179C09000BF7F7 /* OperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperationCell.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/OperationCell.swift"; sourceTree = "<absolute>"; };
+		769359FA25179C09000BF7F7 /* OperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OperationCell.xib; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/OperationCell.xib"; sourceTree = "<absolute>"; };
+		76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorViewModelTests.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/CalculatorViewModelTests.swift"; sourceTree = "<absolute>"; };
 		76DD435F25190A21001CFA36 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		76DD436325192A94001CFA36 /* OperationVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperationVCTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OperationVCTests.swift"; sourceTree = "<group>"; };
-		76DD4371251993E4001CFA36 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
+		76DD436325192A94001CFA36 /* OperationVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperationVCTests.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OperationVCTests.swift"; sourceTree = "<absolute>"; };
+		76DD4371251993E4001CFA36 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFlowLayout.swift; path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Custom View/CustomFlowLayout.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +102,9 @@
 			children = (
 				76398D96251822E400312C1F /* Extensions.swift */,
 			);
-			path = Extension;
-			sourceTree = "<group>";
+			name = Extension;
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Extension";
+			sourceTree = "<absolute>";
 		};
 		764469FD2517903800CCC9B5 /* Calculator View */ = {
 			isa = PBXGroup;
@@ -113,8 +114,9 @@
 				769359F925179C09000BF7F7 /* OperationCell.swift */,
 				769359FA25179C09000BF7F7 /* OperationCell.xib */,
 			);
-			path = "Calculator View";
-			sourceTree = "<group>";
+			name = "Calculator View";
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View";
+			sourceTree = "<absolute>";
 		};
 		764469FE2517904800CCC9B5 /* Custom View */ = {
 			isa = PBXGroup;
@@ -122,8 +124,9 @@
 				760EB548251791E100A1EE96 /* BorderedLabel.swift */,
 				76DD4371251993E4001CFA36 /* CustomFlowLayout.swift */,
 			);
-			path = "Custom View";
-			sourceTree = "<group>";
+			name = "Custom View";
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Custom View";
+			sourceTree = "<absolute>";
 		};
 		766EED3E2516AA2D00D9F837 = {
 			isa = PBXGroup;
@@ -156,8 +159,9 @@
 				766EED7B2516AB0A00D9F837 /* Supporting files */,
 				766EED582516AA3000D9F837 /* Info.plist */,
 			);
-			path = "Advanced Calculator";
-			sourceTree = "<group>";
+			name = "Advanced Calculator";
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator";
+			sourceTree = "<absolute>";
 		};
 		766EED602516AA3100D9F837 /* Advanced CalculatorTests */ = {
 			isa = PBXGroup;
@@ -167,8 +171,9 @@
 				76DD436325192A94001CFA36 /* OperationVCTests.swift */,
 				766EED632516AA3100D9F837 /* Info.plist */,
 			);
-			path = "Advanced CalculatorTests";
-			sourceTree = "<group>";
+			name = "Advanced CalculatorTests";
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests";
+			sourceTree = "<absolute>";
 		};
 		766EED6B2516AA3100D9F837 /* Advanced CalculatorUITests */ = {
 			isa = PBXGroup;
@@ -176,8 +181,9 @@
 				766EED6C2516AA3100D9F837 /* Advanced_CalculatorUITests.swift */,
 				766EED6E2516AA3100D9F837 /* Info.plist */,
 			);
-			path = "Advanced CalculatorUITests";
-			sourceTree = "<group>";
+			name = "Advanced CalculatorUITests";
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorUITests";
+			sourceTree = "<absolute>";
 		};
 		766EED7B2516AB0A00D9F837 /* Supporting files */ = {
 			isa = PBXGroup;
@@ -188,16 +194,18 @@
 				766EED532516AA3000D9F837 /* Assets.xcassets */,
 				766EED552516AA3000D9F837 /* LaunchScreen.storyboard */,
 			);
-			path = "Supporting files";
-			sourceTree = "<group>";
+			name = "Supporting files";
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Supporting files";
+			sourceTree = "<absolute>";
 		};
 		766EED7C2516AB1D00D9F837 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				766EED872516B62B00D9F837 /* CalculatorViewModel.swift */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
+			name = ViewModel;
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/ViewModel";
+			sourceTree = "<absolute>";
 		};
 		766EED7D2516AB2900D9F837 /* View */ = {
 			isa = PBXGroup;
@@ -205,16 +213,18 @@
 				764469FD2517903800CCC9B5 /* Calculator View */,
 				764469FE2517904800CCC9B5 /* Custom View */,
 			);
-			path = View;
-			sourceTree = "<group>";
+			name = View;
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View";
+			sourceTree = "<absolute>";
 		};
 		766EED802516AB4900D9F837 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				766EED812516AB6600D9F837 /* OperationsStore.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
+			name = Model;
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Model";
+			sourceTree = "<absolute>";
 		};
 		76DD435A251909F7001CFA36 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -409,7 +419,8 @@
 				766EED512516AA2E00D9F837 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Supporting files";
+			sourceTree = "<absolute>";
 		};
 		766EED552516AA3000D9F837 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -417,7 +428,8 @@
 				766EED562516AA3000D9F837 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
+			path = "/Users/EsMa/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Supporting files";
+			sourceTree = "<absolute>";
 		};
 /* End PBXVariantGroup section */
 
