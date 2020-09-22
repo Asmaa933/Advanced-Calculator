@@ -10,50 +10,41 @@ import XCTest
 @testable import Calculator
 
 class OpeationsStoreTests: XCTestCase {
-    var operationsArr: [String]!
+    var operationsStore: OperationStore!
     
     override func setUpWithError() throws {
-        operationsArr = [String]()
+        operationsStore = OperationStore()
     }
     
     override func tearDownWithError() throws {
-        operationsArr = nil
-    }
-    
-    func skip_addInArray(operation: String){
-        operationsArr.insert(operation, at: 0)
-    }
-    
-    func skip_removeFromArr(index: Int)  {
-        operationsArr.remove(at: index)
+        operationsStore = nil
     }
     
     /**
      This function tests addOperation function
      */
     func testAddOperation(){
-        skip_addInArray(operation: "+ 5")
-        skip_addInArray(operation: "* 9")
-        
-        XCTAssertNotNil(operationsArr)
-        XCTAssertTrue(operationsArr.count == 2)
-        XCTAssertEqual(operationsArr[0], "* 9")
+        operationsStore.addOperation(operation: "+ 5")
+        operationsStore.addOperation(operation: "* 9")
+        XCTAssertNotNil(operationsStore.getOperatorionsArray())
+        XCTAssertTrue(operationsStore.getOperatorionsArray().count == 2)
+        XCTAssertEqual(operationsStore.getOperatorionsArray()[0], "* 9")
     }
     
     /**
      This function tests remove operation function
      */
     func testRemoveOperation(){
-        skip_addInArray(operation: "+ 5")
-        skip_addInArray(operation: "* 9")
-        skip_addInArray(operation: "+ 30")
-        skip_addInArray(operation: "+ 10")
-        skip_removeFromArr(index: 0)
-        XCTAssertTrue(operationsArr.count == 3)
-        XCTAssertEqual(operationsArr[0], "+ 30")
-        skip_removeFromArr(index: 1)
-        XCTAssertTrue(operationsArr.count == 2)
-        XCTAssertEqual(operationsArr.first ?? "" , "+ 30")
-        XCTAssertEqual(operationsArr.last ?? "", "+ 5")
+        operationsStore.addOperation(operation: "+ 5")
+        operationsStore.addOperation(operation: "* 9")
+        operationsStore.addOperation(operation: "+ 30")
+        operationsStore.addOperation(operation: "+ 10")
+        operationsStore.removeOperation(index: 0)
+        XCTAssertTrue(operationsStore.getOperatorionsArray().count == 3)
+        XCTAssertEqual(operationsStore.getOperatorionsArray()[0], "+ 30")
+        operationsStore.removeOperation(index: 1)
+        XCTAssertTrue(operationsStore.getOperatorionsArray().count == 2)
+        XCTAssertEqual(operationsStore.getOperatorionsArray().first ?? "" , "+ 30")
+        XCTAssertEqual(operationsStore.getOperatorionsArray().last ?? "", "+ 5")
     }
 }

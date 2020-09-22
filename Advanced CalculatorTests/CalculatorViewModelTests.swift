@@ -11,23 +11,14 @@ import XCTest
 
 /// This is a class to test CalculatorViewModel functions
 class CalculatorViewModelTests: XCTestCase {
-    var operationsArr: [String]!
-    
+    var operationsStore: OperationStore!
+
     override func setUpWithError() throws {
-        
-        operationsArr = [String]()
+        operationsStore = OperationStore()
     }
     
     override func tearDownWithError() throws {
-        operationsArr = nil
-    }
-    
-    func skip_addInArray(operation: String){
-        operationsArr.insert(operation, at: 0)
-    }
-    
-    func skip_removeFromArr(index: Int)  {
-        operationsArr.remove(at: index)
+        operationsStore = nil
     }
     
     /**
@@ -37,12 +28,12 @@ class CalculatorViewModelTests: XCTestCase {
     @discardableResult
     func skip_fillArray() -> Double{
         var totalResult = 0.0
-        skip_addInArray(operation: "+ 5")
-        skip_addInArray(operation: "* 9")
-        skip_addInArray(operation: "+ 30")
-        skip_addInArray(operation: "+ 10")
+              operationsStore.addOperation(operation: "+ 5")
+        operationsStore.addOperation(operation: "* 9")
+        operationsStore.addOperation(operation: "+ 30")
+        operationsStore.addOperation(operation: "+ 10")
         
-        for item in operationsArr.reversed(){
+        for item in operationsStore.getOperatorionsArray().reversed(){
             let splittedItem = skip_splitOperationString(operation: item)
             totalResult = calculate(number1: totalResult, operation: splittedItem.0, number2: splittedItem.1)
         }
@@ -77,7 +68,7 @@ class CalculatorViewModelTests: XCTestCase {
      */
     func testGetOperationArrCount(){
         skip_fillArray()
-        let count = operationsArr.count
+        let count = operationsStore.getOperatorionsArray().count
         XCTAssertEqual(count, 4)
     }
     
@@ -87,7 +78,7 @@ class CalculatorViewModelTests: XCTestCase {
     func testsGetOperationAtIndex(){
         let index = 1
         skip_fillArray()
-        let operation = operationsArr[index]
+        let operation = operationsStore.getOperatorionsArray()[index]
         XCTAssertEqual(operation, "+ 30")
     }
     
@@ -108,12 +99,11 @@ class CalculatorViewModelTests: XCTestCase {
             errorMessage = "Can't divide on 0"
             return
         }
-        skip_addInArray(operation: "\(operation) \(number.stringWithoutZeroFraction)")
+        operationsStore.addOperation(operation: "\(operation) \(number.stringWithoutZeroFraction)")
         result = calculate(number1: result, operation: operation, number2: number)
-        
         XCTAssertEqual(errorMessage, "")
         XCTAssertEqual(result, 5.0)
-        XCTAssertEqual(operationsArr[0], "+ 5")
+        XCTAssertEqual(operationsStore.getOperatorionsArray()[0], "+ 5")
         
     }
     
@@ -134,12 +124,12 @@ class CalculatorViewModelTests: XCTestCase {
             errorMessage = "Can't divide on 0"
             return
         }
-        skip_addInArray(operation: "\(operation) \(number.stringWithoutZeroFraction)")
+        operationsStore.addOperation(operation: "\(operation) \(number.stringWithoutZeroFraction)")
         result = calculate(number1: result, operation: operation, number2: number)
         
         XCTAssertEqual(errorMessage, "Can't divide on 0")
         XCTAssertEqual(result, 0.0)
-        XCTAssertTrue(operationsArr.isEmpty)
+        XCTAssertTrue(operationsStore.getOperatorionsArray().isEmpty)
         
     }
     
@@ -170,13 +160,13 @@ class CalculatorViewModelTests: XCTestCase {
      */
     func testRedoOperation() {
         var result = skip_fillArray()
-        let operation = operationsArr[0]
+        let operation = operationsStore.getOperatorionsArray()[0]
         let splitTupple = skip_splitOperationString(operation:operation)
-        skip_addInArray(operation: operation)
+        operationsStore.addOperation(operation: operation)
         result =  calculate(number1: result, operation: splitTupple.0, number2: splitTupple.1)
         XCTAssertTrue(result == 95)
-        XCTAssertTrue(operationsArr.count == 5)
-        XCTAssertEqual(operationsArr[0], operationsArr[1])
+        XCTAssertTrue(operationsStore.getOperatorionsArray().count == 5)
+        XCTAssertEqual(operationsStore.getOperatorionsArray()[0], operationsStore.getOperatorionsArray()[1])
         
     }
     
@@ -186,8 +176,8 @@ class CalculatorViewModelTests: XCTestCase {
     func testundoOperation(){
         var result = skip_fillArray()
         let index = 1
-        let splitTupple = skip_splitOperationString(operation: operationsArr[index])
-        skip_removeFromArr(index: index)
+        let splitTupple = skip_splitOperationString(operation: operationsStore.getOperatorionsArray()[index])
+        operationsStore.removeOperation(index: index)
         switch splitTupple.0 {
         case "+":
             result =  calculate(number1: result, operation: "-", number2: splitTupple.1)
@@ -202,7 +192,7 @@ class CalculatorViewModelTests: XCTestCase {
         }
         
         XCTAssertTrue(result == 55)
-        XCTAssertTrue(operationsArr.count == 3)
+        XCTAssertTrue(operationsStore.getOperatorionsArray().count == 3)
     }
     
     
