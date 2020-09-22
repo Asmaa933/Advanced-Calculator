@@ -11,10 +11,15 @@ import Foundation
 class CalculatorViewModel{
     var updateUIClosure: (()->())?
     var showAlertClosure: (()->())?
-    private var operationStore = OperationStore.shared
+    private var operationStore = OperationStore()
     private var result = 0.0{
         didSet{
-            updateUIClosure?()
+            if result > Double.infinity{
+                errorMessage = "Result is greater than maximum value"
+
+            }else{
+                updateUIClosure?()
+            }
         }
     }
     
@@ -27,6 +32,11 @@ class CalculatorViewModel{
     func executeOperation(operation: String, secondOperand: String){
         guard let number = Double(secondOperand) else {
             errorMessage = "Error in number"
+            return
+        }
+        
+        if number > Double.infinity{
+            errorMessage = "Second Operand is greater than maximum value"
             return
         }
         
@@ -50,7 +60,6 @@ class CalculatorViewModel{
             result /= number
         default:
             break
-            
         }
     }
     

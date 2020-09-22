@@ -101,7 +101,6 @@ class CalculatorVC: UIViewController {
         operandTextField.text = ""
         operandTextField.isEnabled = false
         equalButton.isEnabled = false
-        
         selectedButton = nil
     }
     
@@ -118,6 +117,7 @@ class CalculatorVC: UIViewController {
             selectedButton = sender
             operandTextField.isEnabled = true
             equalButton.isEnabled = operandTextField.text?.isEmpty ?? false ? false : true
+            operandTextField.becomeFirstResponder()
         }
         
     }

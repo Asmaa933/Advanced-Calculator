@@ -10,8 +10,7 @@ import Foundation
 
 /// This is a class to contain the executed operations
 class OperationStore{
-    static var shared = OperationStore()
-    private init() {}
+    
     private var operationsArray = [String]()
     
     /**
