@@ -39,6 +39,9 @@ class CalculatorVC: UIViewController {
         collectionView.dataSource = self
         let nib = UINib(nibName: "OperationCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "OperationCell")
+        let layout = CustomFlowLayout()
+        layout.estimatedItemSize = CGSize(width: 140, height: 40)
+        collectionView.collectionViewLayout = layout
         
     }
     
@@ -126,13 +129,11 @@ class CalculatorVC: UIViewController {
     }
     
 }
-extension CalculatorVC: UICollectionViewDelegate{
+extension CalculatorVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.undoOperation(index: indexPath.row)
     }
-}
-
-extension CalculatorVC: UICollectionViewDataSource{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getOperationArrCount()
     }
@@ -140,9 +141,8 @@ extension CalculatorVC: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OperationCell", for: indexPath) as? OperationCell else {return UICollectionViewCell()}
         cell.text = viewModel.getOperation(index: indexPath.row)
+        cell.maxWidth = collectionView.frame.width - 65
         return cell
     }
 }
-//extension CalculatorVC: UICollectionViewDelegateFlowLayout{
-//
-//}
+

@@ -24,6 +24,7 @@
 		769359FC25179C09000BF7F7 /* OperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769359FA25179C09000BF7F7 /* OperationCell.xib */; };
 		76DD4359251908D8001CFA36 /* CalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */; };
 		76DD436425192A94001CFA36 /* OperationVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD436325192A94001CFA36 /* OperationVCTests.swift */; };
+		76DD4372251993E4001CFA36 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD4371251993E4001CFA36 /* CustomFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorViewModelTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/CalculatorViewModelTests.swift"; sourceTree = "<group>"; };
 		76DD435F25190A21001CFA36 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		76DD436325192A94001CFA36 /* OperationVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperationVCTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OperationVCTests.swift"; sourceTree = "<group>"; };
+		76DD4371251993E4001CFA36 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				760EB548251791E100A1EE96 /* BorderedView.swift */,
+				76DD4371251993E4001CFA36 /* CustomFlowLayout.swift */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				769359FB25179C09000BF7F7 /* OperationCell.swift in Sources */,
 				766EED882516B62B00D9F837 /* CalculatorViewModel.swift in Sources */,
 				766EED4D2516AA2E00D9F837 /* SceneDelegate.swift in Sources */,
+				76DD4372251993E4001CFA36 /* CustomFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

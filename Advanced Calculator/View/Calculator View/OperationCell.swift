@@ -20,4 +20,9 @@ class OperationCell: UICollectionViewCell {
             operLabel.text = text
         }
     }
+    var maxWidth: CGFloat?{
+        didSet{
+            operLabel.preferredMaxLayoutWidth = maxWidth ?? 0
+        }
+    }
 }
