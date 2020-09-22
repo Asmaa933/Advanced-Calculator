@@ -49,6 +49,7 @@ class CalculatorVC: UIViewController {
     private func setupView(){
         setupCollectionView()
         setupGestures()
+        toastLabel.layer.cornerRadius = 10
         operandTextField.addTarget(self, action: #selector(checkTextField), for: .editingChanged)
     }
     
@@ -85,7 +86,6 @@ class CalculatorVC: UIViewController {
     }
     
     private func hideToastLabel(){
-        toastLabel.layer.cornerRadius = 10
         UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {[weak self] in
             self?.toastLabel.alpha = 0.0
         }, completion: {[weak self] (isCompleted) in
