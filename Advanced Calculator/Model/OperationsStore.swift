@@ -12,7 +12,7 @@ import Foundation
 class OperationStore{
     
     private var operationsArray = [String]()
-    
+    private var queue = DispatchQueue(label: "privateQueue")
     /**
      This function adds executed operation to array
      ## Important Notes ##
@@ -21,14 +21,24 @@ class OperationStore{
      - operation: String represent arithmetic operator and number
      */
     func addOperation(operation: String){
-        operationsArray.insert(operation, at: 0)
+        queue.async {[weak self] in
+            self?.operationsArray.insert(operation, at: 0)
+        }
     }
     
     /**
      This function  removes executed  operation to array
      */
     func removeOperation(index: Int){
-        operationsArray.remove(at: index)
+        queue.async {[weak self] in
+            self?.operationsArray.remove(at: index)
+        }
+    }
+    
+    func removeAllOperations(){
+       queue.async {[weak self] in
+            self?.operationsArray.removeAll()
+        }
     }
     
     /**
@@ -36,6 +46,8 @@ class OperationStore{
      - returns: executed operations
      */
     func getOperatorionsArray() -> [String]{
-        return operationsArray
+        queue.sync {[weak self] in
+            return self?.operationsArray ?? []
+        }
     }
 }

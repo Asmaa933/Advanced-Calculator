@@ -15,6 +15,7 @@
                 <outlet property="operationView" destination="fyj-rV-L4w" id="Lkq-my-ocF"/>
                 <outlet property="redoButton" destination="gis-Ga-jZN" id="Axt-S4-fTJ"/>
                 <outlet property="resultLabel" destination="S71-2b-hYR" id="5eX-Ed-hKf"/>
+                <outlet property="toastLabel" destination="PEI-5h-zOc" id="XjX-wY-LgE"/>
                 <outlet property="undoButton" destination="ain-Zj-6ce" id="joF-8x-hb4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -122,15 +123,26 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe down to reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEI-5h-zOc">
+                    <rect key="frame" x="93" y="789.5" width="228" height="37.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="fyj-rV-L4w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="26U-Bq-r0Z"/>
+                <constraint firstItem="PEI-5h-zOc" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.09" id="B6y-fy-zNd"/>
                 <constraint firstItem="J0r-Cb-ywG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="FIx-Pm-NWp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PEI-5h-zOc" secondAttribute="bottom" constant="35" id="VlF-pP-kmv"/>
                 <constraint firstItem="J0r-Cb-ywG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X7B-ka-K2p"/>
                 <constraint firstItem="fyj-rV-L4w" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="e2p-mJ-GeG"/>
+                <constraint firstItem="PEI-5h-zOc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fON-ZB-btP"/>
                 <constraint firstItem="J0r-Cb-ywG" firstAttribute="top" secondItem="fyj-rV-L4w" secondAttribute="bottom" id="hZY-oF-5xM"/>
                 <constraint firstItem="fyj-rV-L4w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iN4-C5-Jr7"/>
+                <constraint firstItem="PEI-5h-zOc" firstAttribute="width" secondItem="J0r-Cb-ywG" secondAttribute="width" multiplier="0.55" id="r5J-CO-wOR"/>
                 <constraint firstAttribute="trailing" secondItem="J0r-Cb-ywG" secondAttribute="trailing" id="t0E-Ys-uMl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

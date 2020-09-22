@@ -17,10 +17,11 @@ class CalculatorVC: UIViewController {
     @IBOutlet private var equalButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var redoButton: UIButton!
+    @IBOutlet var toastLabel: UILabel!
     private var selectedButton: UIButton?{
         didSet{
             oldValue?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            selectedButton?.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            selectedButton?.backgroundColor = #colorLiteral(red: 0.4508578777, green: 0.9882974029, blue: 0.8376303315, alpha: 1)
         }
     }
     
@@ -47,13 +48,30 @@ class CalculatorVC: UIViewController {
     
     private func setupView(){
         setupCollectionView()
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        operationView.addGestureRecognizer(gesture)
+        setupGestures()
         operandTextField.addTarget(self, action: #selector(checkTextField), for: .editingChanged)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+                hideToastLabel()
+
+    }
+    
+    private func setupGestures(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        operationView.addGestureRecognizer(tapGesture)
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(resetCalculator))
+        swipeGesture.direction = .down
+        view.addGestureRecognizer(swipeGesture)
     }
     
     @objc private func dismissKeyboard(){
         operandTextField.resignFirstResponder()
+    }
+    
+    @objc private func resetCalculator(){
+        viewModel.resetCalculator()
     }
     
     @objc private func checkTextField(){
@@ -64,7 +82,15 @@ class CalculatorVC: UIViewController {
                 equalButton.isEnabled = true
             }
         }
-        
+    }
+    
+    private func hideToastLabel(){
+        toastLabel.layer.cornerRadius = 10
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {[weak self] in
+            self?.toastLabel.alpha = 0.0
+        }, completion: {[weak self] (isCompleted) in
+            self?.toastLabel.removeFromSuperview()
+        })
     }
     
     private func initViewModel(){
@@ -74,8 +100,8 @@ class CalculatorVC: UIViewController {
         
         
         viewModel.showAlertClosure = {[weak self] () in
-            self?.showAlert(message: self?.viewModel.errorMessage)
-            
+            guard let errorMessage = self?.viewModel.errorMessage else{return}
+            self?.showAlert(message: errorMessage)
         }
     }
     

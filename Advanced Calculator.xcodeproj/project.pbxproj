@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		760EB549251791E100A1EE96 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EB548251791E100A1EE96 /* BorderedView.swift */; };
+		760EB549251791E100A1EE96 /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EB548251791E100A1EE96 /* BorderedLabel.swift */; };
 		760EB54D251794F900A1EE96 /* OpeationsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */; };
 		76231BEF2517A13B00A3D1B9 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */; };
 		76231BF02517A13B00A3D1B9 /* CalculatorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76231BEE2517A13B00A3D1B9 /* CalculatorVC.xib */; };
@@ -45,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		760EB548251791E100A1EE96 /* BorderedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BorderedView.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Custom View/BorderedView.swift"; sourceTree = "<group>"; };
+		760EB548251791E100A1EE96 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BorderedLabel.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Custom View/BorderedLabel.swift"; sourceTree = "<group>"; };
 		760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpeationsStoreTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OpeationsStoreTests.swift"; sourceTree = "<group>"; };
 		76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorVC.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.swift"; sourceTree = "<group>"; };
 		76231BEE2517A13B00A3D1B9 /* CalculatorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CalculatorVC.xib; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.xib"; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		764469FE2517904800CCC9B5 /* Custom View */ = {
 			isa = PBXGroup;
 			children = (
-				760EB548251791E100A1EE96 /* BorderedView.swift */,
+				760EB548251791E100A1EE96 /* BorderedLabel.swift */,
 				76DD4371251993E4001CFA36 /* CustomFlowLayout.swift */,
 			);
 			path = "Custom View";
@@ -358,7 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76231BEF2517A13B00A3D1B9 /* CalculatorVC.swift in Sources */,
-				760EB549251791E100A1EE96 /* BorderedView.swift in Sources */,
+				760EB549251791E100A1EE96 /* BorderedLabel.swift in Sources */,
 				766EED822516AB6600D9F837 /* OperationsStore.swift in Sources */,
 				76398D97251822E400312C1F /* Extensions.swift in Sources */,
 				766EED4B2516AA2E00D9F837 /* AppDelegate.swift in Sources */,

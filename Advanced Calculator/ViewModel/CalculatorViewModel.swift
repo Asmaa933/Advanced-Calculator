@@ -12,14 +12,9 @@ class CalculatorViewModel{
     var updateUIClosure: (()->())?
     var showAlertClosure: (()->())?
     private var operationStore = OperationStore()
-    private var result = 0.0{
+    private var result: Double?{
         didSet{
-            if result > Double.infinity{
-                errorMessage = "Result is greater than maximum value"
-
-            }else{
-                updateUIClosure?()
-            }
+            updateUIClosure?()
         }
     }
     
@@ -49,17 +44,24 @@ class CalculatorViewModel{
     }
     
     private func calculate(operation: String,number: Double){
+        var tempResult = result ?? 0
         switch operation {
         case "+":
-            result += number
+            tempResult += number
         case "-":
-            result -= number
+            tempResult -= number
         case "*":
-            result *= number
+            tempResult *= number
         case "/":
-            result /= number
+            tempResult /= number
         default:
             break
+        }
+        
+        if tempResult < Double.infinity{
+            result = tempResult
+        }else{
+            errorMessage = "Result is greater than maximum value"
         }
     }
     
@@ -89,8 +91,14 @@ class CalculatorViewModel{
         
     }
     
+    func resetCalculator(){
+        operationStore.removeAllOperations()
+        result = nil
+        errorMessage = nil
+    }
+    
     func getResult() -> String{
-        return "Result = \(result.stringWithoutZeroFraction)"
+        return "Result = \(result?.stringWithoutZeroFraction ?? "0")"
     }
     
     func getOperationArrCount() -> Int{
