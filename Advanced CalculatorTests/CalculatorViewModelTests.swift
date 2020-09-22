@@ -12,7 +12,7 @@ import XCTest
 /// This is a class to test CalculatorViewModel functions
 class CalculatorViewModelTests: XCTestCase {
     var operationsStore: OperationStore!
-
+    
     override func setUpWithError() throws {
         operationsStore = OperationStore()
     }
@@ -28,11 +28,11 @@ class CalculatorViewModelTests: XCTestCase {
     @discardableResult
     func skip_fillArray() -> Double{
         var totalResult = 0.0
-              operationsStore.addOperation(operation: "+ 5")
+        operationsStore.addOperation(operation: "+ 5")
         operationsStore.addOperation(operation: "* 9")
         operationsStore.addOperation(operation: "+ 30")
-        operationsStore.addOperation(operation: "+ 10")
-        
+        operationsStore.addOperation(operation: "- 5")
+        operationsStore.addOperation(operation: "/ 2")
         for item in operationsStore.getOperatorionsArray().reversed(){
             let splittedItem = skip_splitOperationString(operation: item)
             totalResult = calculate(number1: totalResult, operation: splittedItem.0, number2: splittedItem.1)
@@ -69,7 +69,7 @@ class CalculatorViewModelTests: XCTestCase {
     func testGetOperationArrCount(){
         skip_fillArray()
         let count = operationsStore.getOperatorionsArray().count
-        XCTAssertEqual(count, 4)
+        XCTAssertEqual(count, 5)
     }
     
     /**
@@ -79,7 +79,7 @@ class CalculatorViewModelTests: XCTestCase {
         let index = 1
         skip_fillArray()
         let operation = operationsStore.getOperatorionsArray()[index]
-        XCTAssertEqual(operation, "+ 30")
+        XCTAssertEqual(operation, "- 10")
     }
     
     /**
@@ -164,8 +164,8 @@ class CalculatorViewModelTests: XCTestCase {
         let splitTupple = skip_splitOperationString(operation:operation)
         operationsStore.addOperation(operation: operation)
         result =  calculate(number1: result, operation: splitTupple.0, number2: splitTupple.1)
-        XCTAssertTrue(result == 95)
-        XCTAssertTrue(operationsStore.getOperatorionsArray().count == 5)
+        XCTAssertTrue(result == 17.5)
+        XCTAssertTrue(operationsStore.getOperatorionsArray().count == 6)
         XCTAssertEqual(operationsStore.getOperatorionsArray()[0], operationsStore.getOperatorionsArray()[1])
         
     }
@@ -191,8 +191,8 @@ class CalculatorViewModelTests: XCTestCase {
             break
         }
         
-        XCTAssertTrue(result == 55)
-        XCTAssertTrue(operationsStore.getOperatorionsArray().count == 3)
+        XCTAssertTrue(result == 70)
+        XCTAssertTrue(operationsStore.getOperatorionsArray().count == 4)
     }
     
     
@@ -204,6 +204,12 @@ class CalculatorViewModelTests: XCTestCase {
         let oper = String(splittedArr.first ?? "")
         let number = Double(splittedArr[1]) ?? 0
         return (oper,number)
+    }
+    
+    func testResetCalculator(){
+        skip_fillArray()
+        operationsStore.removeAllOperations()
+        XCTAssertTrue(operationsStore.getOperatorionsArray().isEmpty)
     }
     
     

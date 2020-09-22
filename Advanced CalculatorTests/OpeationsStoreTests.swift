@@ -47,4 +47,13 @@ class OpeationsStoreTests: XCTestCase {
         XCTAssertEqual(operationsStore.getOperatorionsArray().first ?? "" , "+ 30")
         XCTAssertEqual(operationsStore.getOperatorionsArray().last ?? "", "+ 5")
     }
+    
+    func testRemoveAllOperations(){
+        operationsStore.addOperation(operation: "+ 5")
+        operationsStore.addOperation(operation: "* 9")
+        operationsStore.addOperation(operation: "+ 30")
+        operationsStore.addOperation(operation: "+ 10")
+        operationsStore.removeAllOperations()
+        XCTAssertTrue(operationsStore.getOperatorionsArray().isEmpty)
+    }
 }

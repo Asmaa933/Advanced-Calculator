@@ -29,14 +29,23 @@ class OperationVCTests: XCTestCase {
     func testExecuteOperation(){
         viewModel.executeOperation(operation: "+", secondOperand: "5")
         XCTAssertTrue(viewModel.getResult() == "Result = 5")
+        //check errors
         viewModel.executeOperation(operation: "/", secondOperand: "0")
         XCTAssertTrue(viewModel.getResult() == "Result = 5")
         XCTAssertTrue(viewModel.errorMessage == "Can't divide on 0")
         viewModel.executeOperation(operation: "*", secondOperand: "aa")
         XCTAssertTrue(viewModel.getResult() == "Result = 5")
         XCTAssertTrue(viewModel.errorMessage == "Error in number")
-        XCTAssertFalse(viewModel.getOperationArrCount() == 3)
+        viewModel.executeOperation(operation: "++", secondOperand: "aa")
+        XCTAssertTrue(viewModel.getResult() == "Result = 5")
+        XCTAssertTrue(viewModel.errorMessage == "Error in number")
+        viewModel.executeOperation(operation: "+", secondOperand: "\(Double.infinity + 1)")
+        XCTAssertTrue(viewModel.getResult() == "Result = 5")
+        XCTAssertTrue(viewModel.errorMessage == "Second Operand is greater than maximum value")
+        
+        XCTAssertFalse(viewModel.getOperationArrCount() == 5)
         XCTAssertTrue(viewModel.getOperationArrCount() == 1)
+        
     }
     
     /**
@@ -59,11 +68,20 @@ class OperationVCTests: XCTestCase {
         viewModel.executeOperation(operation: "+", secondOperand: "5")
         viewModel.executeOperation(operation: "*", secondOperand: "3")
         viewModel.executeOperation(operation: "-", secondOperand: "7")
-        viewModel.executeOperation(operation: "*", secondOperand: "2")
+        viewModel.executeOperation(operation: "/", secondOperand: "2")
+        viewModel.executeOperation(operation: "//", secondOperand: "2")
         viewModel.undoOperation(index: 0)
         XCTAssertTrue(viewModel.getOperationArrCount() == 3)
         XCTAssertTrue(viewModel.getResult() == "Result = 8")
         XCTAssertTrue(viewModel.getOperation(index: 0) == "- 7")
     }
     
+    /**
+     This function tests reset calaculator  function
+     */
+    func testResetCalculator() {
+        viewModel.resetCalculator()
+        XCTAssertTrue(viewModel.getOperationArrCount() == 0)
+        XCTAssertTrue(viewModel.getResult() == "Result = 0")
+    }
 }
