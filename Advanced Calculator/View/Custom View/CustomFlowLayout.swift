@@ -11,6 +11,7 @@ import UIKit
 /// Calculate row of collection view
 class Row {
     // MARK: - Variables
+    /// Array of UICollectionViewLayoutAttributes that manages the layout-related attributes for a given item in a collection view.
     var attributes = [UICollectionViewLayoutAttributes]()
     
     /// Space between cells

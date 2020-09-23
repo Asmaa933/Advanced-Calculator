@@ -8,8 +8,8 @@
 
 import UIKit
 
+/// The root object of application.
 @UIApplicationMain
-/// The root object of  app
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// Tells the delegate that the launch process is almost done and the app is almost ready to run.

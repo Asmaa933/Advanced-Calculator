@@ -28,19 +28,19 @@ class OperationVCTests: XCTestCase {
      */
     func testExecuteOperation(){
         viewModel.executeOperation(operation: "+", secondOperand: "5")
-        XCTAssertTrue(viewModel.getResult() == "Result = 5")
+        XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
         //check errors
         viewModel.executeOperation(operation: "/", secondOperand: "0")
-        XCTAssertTrue(viewModel.getResult() == "Result = 5")
+        XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
         XCTAssertTrue(viewModel.errorMessage == "Can't divide on 0")
         viewModel.executeOperation(operation: "*", secondOperand: "aa")
-        XCTAssertTrue(viewModel.getResult() == "Result = 5")
+        XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
         XCTAssertTrue(viewModel.errorMessage == "Error in number")
         viewModel.executeOperation(operation: "++", secondOperand: "aa")
-        XCTAssertTrue(viewModel.getResult() == "Result = 5")
+        XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
         XCTAssertTrue(viewModel.errorMessage == "Error in number")
         viewModel.executeOperation(operation: "+", secondOperand: "\(Double.infinity + 1)")
-        XCTAssertTrue(viewModel.getResult() == "Result = 5")
+        XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
         XCTAssertTrue(viewModel.errorMessage == "Second Operand is greater than maximum value")
         
         XCTAssertFalse(viewModel.getOperationArrCount() == 5)
@@ -57,8 +57,8 @@ class OperationVCTests: XCTestCase {
         viewModel.redoOperation()
         XCTAssertTrue(viewModel.getOperationArrCount() == 3)
         XCTAssertEqual(viewModel.getOperation(index: 0),viewModel.getOperation(index: 1))
-        XCTAssertTrue(viewModel.getOperation(index: 0) == "* 3")
-        XCTAssertTrue(viewModel.getResult() == "Result = 45")
+        XCTAssertTrue(viewModel.getOperation(index: 0) == "* 3.0")
+        XCTAssertTrue(viewModel.getResult() == "Result = 45.0")
     }
     
     /**
@@ -71,8 +71,8 @@ class OperationVCTests: XCTestCase {
         viewModel.executeOperation(operation: "/", secondOperand: "2")
         viewModel.undoOperation(index: 0)
         XCTAssertTrue(viewModel.getOperationArrCount() == 3)
-        XCTAssertTrue(viewModel.getResult() == "Result = 8")
-        XCTAssertTrue(viewModel.getOperation(index: 0) == "- 7")
+        XCTAssertTrue(viewModel.getResult() == "Result = 8.0")
+        XCTAssertTrue(viewModel.getOperation(index: 0) == "- 7.0")
     }
     
     /**
@@ -81,6 +81,6 @@ class OperationVCTests: XCTestCase {
     func testResetCalculator() {
         viewModel.resetCalculator()
         XCTAssertTrue(viewModel.getOperationArrCount() == 0)
-        XCTAssertTrue(viewModel.getResult() == "Result = 0")
+        XCTAssertTrue(viewModel.getResult() == "Result = 0.0")
     }
 }
