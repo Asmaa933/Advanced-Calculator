@@ -94,7 +94,7 @@ class CalculatorViewModelTests: XCTestCase {
         result = calculate(number1: result, operation: operation, number2: number)
         XCTAssertEqual(errorMessage, "")
         XCTAssertEqual(result, 5.0)
-        XCTAssertEqual(operationsStore.getOperatorionsArray()[0], "+ 5.0")
+        XCTAssertEqual(operationsStore.getOperatorionsArray()[0], "+ 5")
         
     }
     

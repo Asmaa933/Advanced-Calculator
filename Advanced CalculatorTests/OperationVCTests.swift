@@ -36,13 +36,11 @@ class OperationVCTests: XCTestCase {
         viewModel.executeOperation(operation: "*", secondOperand: "aa")
         XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
         XCTAssertTrue(viewModel.errorMessage == "Error in number")
-        viewModel.executeOperation(operation: "++", secondOperand: "aa")
         XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
         XCTAssertTrue(viewModel.errorMessage == "Error in number")
-        viewModel.executeOperation(operation: "+", secondOperand: "\(Double.infinity + 1)")
+        viewModel.executeOperation(operation: "+", secondOperand: "\(Int.max + 1)")
         XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
-        XCTAssertTrue(viewModel.errorMessage == "Second Operand is greater than maximum value")
-        
+        XCTAssertTrue(viewModel.errorMessage == "Second Operand is greater than maximum value (\(Int.max))"
         XCTAssertFalse(viewModel.getOperationArrCount() == 5)
         XCTAssertTrue(viewModel.getOperationArrCount() == 1)
         
@@ -57,7 +55,7 @@ class OperationVCTests: XCTestCase {
         viewModel.redoOperation()
         XCTAssertTrue(viewModel.getOperationArrCount() == 3)
         XCTAssertEqual(viewModel.getOperation(index: 0),viewModel.getOperation(index: 1))
-        XCTAssertTrue(viewModel.getOperation(index: 0) == "* 3.0")
+        XCTAssertTrue(viewModel.getOperation(index: 0) == "* 3")
         XCTAssertTrue(viewModel.getResult() == "Result = 45.0")
     }
     
@@ -72,7 +70,11 @@ class OperationVCTests: XCTestCase {
         viewModel.undoOperation(index: 0)
         XCTAssertTrue(viewModel.getOperationArrCount() == 3)
         XCTAssertTrue(viewModel.getResult() == "Result = 8.0")
-        XCTAssertTrue(viewModel.getOperation(index: 0) == "- 7.0")
+        XCTAssertTrue(viewModel.getOperation(index: 0) == "- 7")
+        viewModel.undoOperation(index: 0)
+        viewModel.undoOperation(index: 0)
+        viewModel.undoOperation(index: 0)
+        XCTAssertTrue(viewModel.getOperationArrCount() == 0)
     }
     
     /**

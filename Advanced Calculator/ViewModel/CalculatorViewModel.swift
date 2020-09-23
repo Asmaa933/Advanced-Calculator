@@ -38,13 +38,8 @@ class CalculatorViewModel{
     ///   - operation: one of arithmatic operations =, - , * ,/
     ///   - secondOperand: the entered second operand
     func executeOperation(operation: String, secondOperand: String){
-        guard let number = Double(secondOperand) else {
-            errorMessage = "Error in number"
-            return
-        }
-        
-        if number == Double.infinity{
-            errorMessage = "Second Operand is greater than maximum value"
+        guard let number = Int(secondOperand) else {
+            errorMessage = "Second Operand is greater than maximum value (\(Int.max))"
             return
         }
         
@@ -53,7 +48,7 @@ class CalculatorViewModel{
             return
         }
         operationStore.addOperation(operation: "\(operation) \(number)")
-        calculate(operation: operation, number: number)
+        calculate(operation: operation, number: Double(number))
     }
     
     
@@ -79,7 +74,7 @@ class CalculatorViewModel{
         if tempResult < Double.infinity{
             result = tempResult
         }else{
-            errorMessage = "Result is greater than maximum value"
+            errorMessage = "Result is infinity"
         }
     }
     
