@@ -30,7 +30,7 @@ class CalculatorViewModel{
             return
         }
         
-        if number > Double.infinity{
+        if number == Double.infinity{
             errorMessage = "Second Operand is greater than maximum value"
             return
         }
@@ -117,7 +117,7 @@ class CalculatorViewModel{
      - operation: String represent arithmetic operator and number
      - returns: Tuple has arithmetic operator and number values
      */
-    func splitOperationString(operation: String) -> (String,Double){
+    private func splitOperationString(operation: String) -> (String,Double){
         let splittedArr = operation.split(separator: " ")
         let oper = String(splittedArr.first ?? "")
         let number = Double(splittedArr[1]) ?? 0

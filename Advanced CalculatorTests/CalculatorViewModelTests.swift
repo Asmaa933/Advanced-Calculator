@@ -191,7 +191,7 @@ class CalculatorViewModelTests: XCTestCase {
             break
         }
         
-        XCTAssertTrue(result == 70)
+        XCTAssertTrue(result == 40)
         XCTAssertTrue(operationsStore.getOperatorionsArray().count == 4)
     }
     
