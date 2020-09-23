@@ -151,9 +151,9 @@
 		766EED602516AA3100D9F837 /* Advanced CalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				76DD436325192A94001CFA36 /* OperationVCTests.swift */,
 				760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */,
 				76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */,
-				76DD436325192A94001CFA36 /* OperationVCTests.swift */,
 				766EED632516AA3100D9F837 /* Info.plist */,
 			);
 			path = "Advanced CalculatorTests";

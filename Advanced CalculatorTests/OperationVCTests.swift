@@ -33,17 +33,8 @@ class OperationVCTests: XCTestCase {
         viewModel.executeOperation(operation: "/", secondOperand: "0")
         XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
         XCTAssertTrue(viewModel.errorMessage == "Can't divide on 0")
-        viewModel.executeOperation(operation: "*", secondOperand: "aa")
-        XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
-        XCTAssertTrue(viewModel.errorMessage == "Error in number")
-        XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
-        XCTAssertTrue(viewModel.errorMessage == "Error in number")
-        viewModel.executeOperation(operation: "+", secondOperand: "\(Int.max + 1)")
-        XCTAssertTrue(viewModel.getResult() == "Result = 5.0")
-        XCTAssertTrue(viewModel.errorMessage == "Second Operand is greater than maximum value (\(Int.max))"
-        XCTAssertFalse(viewModel.getOperationArrCount() == 5)
+        XCTAssertFalse(viewModel.getOperationArrCount() == 2)
         XCTAssertTrue(viewModel.getOperationArrCount() == 1)
-        
     }
     
     /**

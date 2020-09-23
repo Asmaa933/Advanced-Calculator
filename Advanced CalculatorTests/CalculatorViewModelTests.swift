@@ -81,8 +81,8 @@ class CalculatorViewModelTests: XCTestCase {
         let secondOperand = "5"
         var errorMessage = ""
         var result = 0.0
-        guard let number = Double(secondOperand) else {
-            errorMessage = "Error in number"
+        guard let number = Int(secondOperand) else {
+            errorMessage = "Second Operand is greater than maximum value (\(Int.max))"
             return
         }
         
@@ -91,7 +91,7 @@ class CalculatorViewModelTests: XCTestCase {
             return
         }
         operationsStore.addOperation(operation: "\(operation) \(number)")
-        result = calculate(number1: result, operation: operation, number2: number)
+        result = calculate(number1: result, operation: operation, number2: Double(number))
         XCTAssertEqual(errorMessage, "")
         XCTAssertEqual(result, 5.0)
         XCTAssertEqual(operationsStore.getOperatorionsArray()[0], "+ 5")
@@ -106,8 +106,8 @@ class CalculatorViewModelTests: XCTestCase {
         let secondOperand = "0"
         var errorMessage = ""
         var result = 0.0
-        guard let number = Double(secondOperand) else {
-            errorMessage = "Error in number"
+        guard let number = Int(secondOperand) else {
+            errorMessage = "Second Operand is greater than maximum value (\(Int.max))"
             return
         }
         
@@ -116,7 +116,7 @@ class CalculatorViewModelTests: XCTestCase {
             return
         }
         operationsStore.addOperation(operation: "\(operation) \(number)")
-        result = calculate(number1: result, operation: operation, number2: number)
+        result = calculate(number1: result, operation: operation, number2: Double(number))
         
         XCTAssertEqual(errorMessage, "Can't divide on 0")
         XCTAssertEqual(result, 0.0)
