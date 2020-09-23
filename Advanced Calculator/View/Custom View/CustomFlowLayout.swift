@@ -8,11 +8,16 @@
 
 import UIKit
 
+/// Calculate row of collection view
 class Row {
     // MARK: - Variables
     var attributes = [UICollectionViewLayoutAttributes]()
+    
+    /// Space between cells
     var spacing: CGFloat = 0
     
+    /// Initialization  an instance of a class
+    /// - Parameter spacing: space between cells
     init(spacing: CGFloat) {
         self.spacing = spacing
     }
@@ -23,6 +28,8 @@ class Row {
         attributes.append(attribute)
     }
     
+    /// Setup label layout
+    /// - Parameter collectionViewWidth: collection view width
     func labelLayout(collectionViewWidth: CGFloat) {
         let padding = 10
         var offset = padding
@@ -35,6 +42,9 @@ class Row {
 
 /// Custom flow layout for collection view.
 class CustomFlowLayout: UICollectionViewFlowLayout {
+    /// Returns the layout attributes for all of the cells and views in the specified rectangle.
+    /// - Parameter rect: The rectangle (specified in the collection view’s coordinate system) containing the target views.
+    /// - Returns: An array of UICollectionViewLayoutAttributes objects representing the layout information for the cells and views. The default implementation returns nil.
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let attributes = super.layoutAttributesForElements(in: rect) else {
             return nil

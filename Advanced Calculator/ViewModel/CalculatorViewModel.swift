@@ -12,8 +12,6 @@ import Foundation
 class CalculatorViewModel{
     
     // MARK: - Variables
-    var updateUIClosure: (()->())?
-    var showAlertClosure: (()->())?
     private var operationStore = OperationStore()
     private var operationArr = [String]()
     private var result: Double?{
@@ -23,11 +21,17 @@ class CalculatorViewModel{
         }
     }
     
+    /// to handle error
     private(set) var errorMessage: String?{
         didSet{
             showAlertClosure?()
         }
     }
+    
+    /// Closure for binding on reselt
+    var updateUIClosure: (()->())?
+    /// Closure for binding on error
+       var showAlertClosure: (()->())?
     
     /// Execute the selected
     /// - Parameters:
@@ -48,7 +52,7 @@ class CalculatorViewModel{
             errorMessage = "Can't divide on 0"
             return
         }
-        operationStore.addOperation(operation: "\(operation) \(number.stringWithoutZeroFraction)")
+        operationStore.addOperation(operation: "\(operation) \(number)")
         calculate(operation: operation, number: number)
     }
     

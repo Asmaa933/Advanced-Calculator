@@ -33,6 +33,7 @@ class CalculatorVC: UIViewController {
     }()
     
     
+    /// Called after the controller's view is loaded into memory.
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -60,6 +61,8 @@ class CalculatorVC: UIViewController {
         operandTextField.addTarget(self, action: #selector(checkTextField), for: .editingChanged)
     }
     
+    /// Notifies the view controller that its view was added to a view hierarchy.
+    /// - Parameter animated: If true, the view was added to the window using an animation.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         hideToastLabel()
@@ -178,14 +181,29 @@ class CalculatorVC: UIViewController {
 
 // MARK: - UICollectionView Protocol 
 extension CalculatorVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    
+    /// Tells the delegate that the item at the specified index path was selected.
+    /// - Parameters:
+    ///   - collectionView: The collection view object that is notifying you of the selection change.
+    ///   - indexPath: The index path of the cell that was selected.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.undoOperation(index: indexPath.row)
     }
     
+    /// Asks your data source object for the number of items in the specified section.
+    /// - Parameters:
+    ///   - collectionView: The collection view requesting this information.
+    ///   - section: An index number identifying a section in collectionView. This index value is 0-based.
+    /// - Returns: The number of rows in section.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getOperationArrCount()
     }
     
+    /// Asks your data source object for the cell that corresponds to the specified item in the collection view.
+    /// - Parameters:
+    ///   - collectionView: The collection view requesting this information.
+    ///   - indexPath: The index path that specifies the location of the item.
+    /// - Returns: A configured cell object. You must not return nil from this method.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OperationCell", for: indexPath) as? OperationCell else {return UICollectionViewCell()}
         cell.text = viewModel.getOperation(index: indexPath.row)

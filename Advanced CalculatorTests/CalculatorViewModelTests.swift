@@ -55,16 +55,6 @@ class CalculatorViewModelTests: XCTestCase {
     }
     
     /**
-     This function tests removing trailing zeros from double number
-     */
-    func testRemoveTrailingZeros(){
-        var number = 1.00
-        XCTAssertEqual(number.stringWithoutZeroFraction, "1")
-        number = 1.012
-        XCTAssertEqual(number.stringWithoutZeroFraction, "1.012")
-    }
-    
-    /**
      This function tests getting array count
      */
     func testGetOperationArrCount(){
@@ -100,7 +90,7 @@ class CalculatorViewModelTests: XCTestCase {
             errorMessage = "Can't divide on 0"
             return
         }
-        operationsStore.addOperation(operation: "\(operation) \(number.stringWithoutZeroFraction)")
+        operationsStore.addOperation(operation: "\(operation) \(number)")
         result = calculate(number1: result, operation: operation, number2: number)
         XCTAssertEqual(errorMessage, "")
         XCTAssertEqual(result, 5.0)
@@ -125,7 +115,7 @@ class CalculatorViewModelTests: XCTestCase {
             errorMessage = "Can't divide on 0"
             return
         }
-        operationsStore.addOperation(operation: "\(operation) \(number.stringWithoutZeroFraction)")
+        operationsStore.addOperation(operation: "\(operation) \(number)")
         result = calculate(number1: result, operation: operation, number2: number)
         
         XCTAssertEqual(errorMessage, "Can't divide on 0")
