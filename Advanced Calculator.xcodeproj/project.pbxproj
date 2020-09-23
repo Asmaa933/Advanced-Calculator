@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3ECC9F1F251B15D100264318 /* OperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECC9F1C251B15D000264318 /* OperationCell.xib */; };
+		3ECC9F20251B15D100264318 /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC9F1D251B15D100264318 /* OperationCell.swift */; };
+		3ECC9F21251B15D100264318 /* CalculatorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECC9F1E251B15D100264318 /* CalculatorVC.xib */; };
 		760EB549251791E100A1EE96 /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EB548251791E100A1EE96 /* BorderedLabel.swift */; };
 		760EB54D251794F900A1EE96 /* OpeationsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */; };
 		76231BEF2517A13B00A3D1B9 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */; };
-		76231BF02517A13B00A3D1B9 /* CalculatorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76231BEE2517A13B00A3D1B9 /* CalculatorVC.xib */; };
 		76398D97251822E400312C1F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76398D96251822E400312C1F /* Extensions.swift */; };
 		766EED4B2516AA2E00D9F837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED4A2516AA2E00D9F837 /* AppDelegate.swift */; };
 		766EED4D2516AA2E00D9F837 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED4C2516AA2E00D9F837 /* SceneDelegate.swift */; };
@@ -20,8 +22,6 @@
 		766EED6D2516AA3100D9F837 /* Advanced_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED6C2516AA3100D9F837 /* Advanced_CalculatorUITests.swift */; };
 		766EED822516AB6600D9F837 /* OperationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED812516AB6600D9F837 /* OperationsStore.swift */; };
 		766EED882516B62B00D9F837 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EED872516B62B00D9F837 /* CalculatorViewModel.swift */; };
-		769359FB25179C09000BF7F7 /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769359F925179C09000BF7F7 /* OperationCell.swift */; };
-		769359FC25179C09000BF7F7 /* OperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769359FA25179C09000BF7F7 /* OperationCell.xib */; };
 		76DD4359251908D8001CFA36 /* CalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */; };
 		76DD436425192A94001CFA36 /* OperationVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD436325192A94001CFA36 /* OperationVCTests.swift */; };
 		76DD4372251993E4001CFA36 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD4371251993E4001CFA36 /* CustomFlowLayout.swift */; };
@@ -45,11 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		760EB548251791E100A1EE96 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BorderedLabel.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Custom View/BorderedLabel.swift"; sourceTree = "<group>"; };
-		760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpeationsStoreTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OpeationsStoreTests.swift"; sourceTree = "<group>"; };
-		76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorVC.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.swift"; sourceTree = "<group>"; };
-		76231BEE2517A13B00A3D1B9 /* CalculatorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CalculatorVC.xib; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/CalculatorVC.xib"; sourceTree = "<group>"; };
-		76398D96251822E400312C1F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/Extension/Extensions.swift"; sourceTree = "<group>"; };
+		3ECC9F1C251B15D000264318 /* OperationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperationCell.xib; sourceTree = "<group>"; };
+		3ECC9F1D251B15D100264318 /* OperationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCell.swift; sourceTree = "<group>"; };
+		3ECC9F1E251B15D100264318 /* CalculatorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatorVC.xib; sourceTree = "<group>"; };
+		760EB548251791E100A1EE96 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedLabel.swift; sourceTree = "<group>"; };
+		760EB54A2517947C00A1EE96 /* OpeationsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeationsStoreTests.swift; sourceTree = "<group>"; };
+		76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
+		76398D96251822E400312C1F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		766EED472516AA2E00D9F837 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		766EED4A2516AA2E00D9F837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		766EED4C2516AA2E00D9F837 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,11 +66,9 @@
 		766EED6E2516AA3100D9F837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		766EED812516AB6600D9F837 /* OperationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsStore.swift; sourceTree = "<group>"; };
 		766EED872516B62B00D9F837 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
-		769359F925179C09000BF7F7 /* OperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperationCell.swift; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/OperationCell.swift"; sourceTree = "<group>"; };
-		769359FA25179C09000BF7F7 /* OperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OperationCell.xib; path = "../../../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced Calculator/View/Calculator View/OperationCell.xib"; sourceTree = "<group>"; };
-		76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorViewModelTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/CalculatorViewModelTests.swift"; sourceTree = "<group>"; };
+		76DD4358251908D8001CFA36 /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModelTests.swift; sourceTree = "<group>"; };
 		76DD435F25190A21001CFA36 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		76DD436325192A94001CFA36 /* OperationVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OperationVCTests.swift; path = "../../../../../esma/Desktop/PROJECTS/Advanced Calculator/Advanced CalculatorTests/OperationVCTests.swift"; sourceTree = "<group>"; };
+		76DD436325192A94001CFA36 /* OperationVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationVCTests.swift; sourceTree = "<group>"; };
 		76DD4371251993E4001CFA36 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,10 +108,10 @@
 		764469FD2517903800CCC9B5 /* Calculator View */ = {
 			isa = PBXGroup;
 			children = (
+				3ECC9F1E251B15D100264318 /* CalculatorVC.xib */,
+				3ECC9F1D251B15D100264318 /* OperationCell.swift */,
+				3ECC9F1C251B15D000264318 /* OperationCell.xib */,
 				76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */,
-				76231BEE2517A13B00A3D1B9 /* CalculatorVC.xib */,
-				769359F925179C09000BF7F7 /* OperationCell.swift */,
-				769359FA25179C09000BF7F7 /* OperationCell.xib */,
 			);
 			path = "Calculator View";
 			sourceTree = "<group>";
@@ -330,9 +330,9 @@
 			files = (
 				766EED572516AA3000D9F837 /* LaunchScreen.storyboard in Resources */,
 				766EED542516AA3000D9F837 /* Assets.xcassets in Resources */,
-				769359FC25179C09000BF7F7 /* OperationCell.xib in Resources */,
-				76231BF02517A13B00A3D1B9 /* CalculatorVC.xib in Resources */,
 				766EED522516AA2E00D9F837 /* Main.storyboard in Resources */,
+				3ECC9F21251B15D100264318 /* CalculatorVC.xib in Resources */,
+				3ECC9F1F251B15D100264318 /* OperationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +362,7 @@
 				766EED822516AB6600D9F837 /* OperationsStore.swift in Sources */,
 				76398D97251822E400312C1F /* Extensions.swift in Sources */,
 				766EED4B2516AA2E00D9F837 /* AppDelegate.swift in Sources */,
-				769359FB25179C09000BF7F7 /* OperationCell.swift in Sources */,
+				3ECC9F20251B15D100264318 /* OperationCell.swift in Sources */,
 				766EED882516B62B00D9F837 /* CalculatorViewModel.swift in Sources */,
 				766EED4D2516AA2E00D9F837 /* SceneDelegate.swift in Sources */,
 				76DD4372251993E4001CFA36 /* CustomFlowLayout.swift in Sources */,
