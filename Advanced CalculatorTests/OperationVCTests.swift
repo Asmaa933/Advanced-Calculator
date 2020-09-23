@@ -69,7 +69,6 @@ class OperationVCTests: XCTestCase {
         viewModel.executeOperation(operation: "*", secondOperand: "3")
         viewModel.executeOperation(operation: "-", secondOperand: "7")
         viewModel.executeOperation(operation: "/", secondOperand: "2")
-        viewModel.executeOperation(operation: "//", secondOperand: "2")
         viewModel.undoOperation(index: 0)
         XCTAssertTrue(viewModel.getOperationArrCount() == 3)
         XCTAssertTrue(viewModel.getResult() == "Result = 8")

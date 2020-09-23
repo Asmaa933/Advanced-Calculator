@@ -15,8 +15,10 @@ class CalculatorViewModel{
     var updateUIClosure: (()->())?
     var showAlertClosure: (()->())?
     private var operationStore = OperationStore()
+    private var operationArr = [String]()
     private var result: Double?{
         didSet{
+            operationArr = operationStore.getOperatorionsArray()
             updateUIClosure?()
         }
     }
@@ -79,7 +81,7 @@ class CalculatorViewModel{
     
     /// Redo the previous operation.
     func redoOperation(){
-        let operation = operationStore.getOperatorionsArray()[0]
+        let operation = operationArr[0]
         let splitTupple = splitOperationString(operation:operation)
         operationStore.addOperation(operation: operation)
         calculate(operation: splitTupple.0, number: splitTupple.1)
@@ -88,7 +90,7 @@ class CalculatorViewModel{
     
     /// Undo the previous operation.
     func undoOperation(index: Int){
-        let splitTupple = splitOperationString(operation: operationStore.getOperatorionsArray()[index])
+        let splitTupple = splitOperationString(operation: operationArr[index])
         operationStore.removeOperation(index: index)
         switch splitTupple.0 {
         case "+":
@@ -103,6 +105,11 @@ class CalculatorViewModel{
             break
         }
         
+        // reset result if array is empty due to exponential values
+        if operationArr.isEmpty && result != 0{
+            result = 0
+        }
+                
     }
     
     /// Reset the calculator array and data.
@@ -114,17 +121,17 @@ class CalculatorViewModel{
     
     /// Get calculation result.
     func getResult() -> String{
-        return "Result = \(result?.stringWithoutZeroFraction ?? "0")"
+        return "Result = \(result ?? 0)"
     }
     
     /// Get operation array count.
     func getOperationArrCount() -> Int{
-        return operationStore.getOperatorionsArray().count
+        return operationArr.count
     }
     
     /// Get operation from array at particular index.
     func getOperation(index: Int) -> String {
-        return operationStore.getOperatorionsArray()[index]
+        return operationArr[index]
     }
     
     
