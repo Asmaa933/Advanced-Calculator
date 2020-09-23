@@ -11,7 +11,7 @@ import XCTest
 
 /// This is a class to test  calling viewModel functions
 class OperationVCTests: XCTestCase {
-    
+    // MARK: - Variables
     var viewModel: CalculatorViewModel!
     
     override func setUpWithError() throws {

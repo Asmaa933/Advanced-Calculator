@@ -8,8 +8,10 @@
 
 import UIKit
 
+/// Class Custom UICollectionViewCell
 class OperationCell: UICollectionViewCell {
     
+    // MARK: - Outlets
     @IBOutlet private weak var operLabel: UILabel!
     
     override func awakeFromNib() {
@@ -20,6 +22,7 @@ class OperationCell: UICollectionViewCell {
             operLabel.text = text
         }
     }
+    
     var maxWidth: CGFloat?{
         didSet{
             operLabel.preferredMaxLayoutWidth = maxWidth ?? 0

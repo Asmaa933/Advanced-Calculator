@@ -10,6 +10,8 @@ import XCTest
 @testable import Calculator
 
 class OpeationsStoreTests: XCTestCase {
+    
+    // MARK: - Variables
     var operationsStore: OperationStore!
     
     override func setUpWithError() throws {
@@ -48,6 +50,9 @@ class OpeationsStoreTests: XCTestCase {
         XCTAssertEqual(operationsStore.getOperatorionsArray().last ?? "", "+ 5")
     }
     
+    /**
+     This function tests remove all operation function
+     */
     func testRemoveAllOperations(){
         operationsStore.addOperation(operation: "+ 5")
         operationsStore.addOperation(operation: "* 9")

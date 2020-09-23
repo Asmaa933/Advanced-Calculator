@@ -9,18 +9,21 @@
 import UIKit
 
 class Row {
+    // MARK: - Variables
     var attributes = [UICollectionViewLayoutAttributes]()
     var spacing: CGFloat = 0
-
+    
     init(spacing: CGFloat) {
         self.spacing = spacing
     }
-
+    
+    /// Add  attribute to attributes array
+    /// - Parameter attribute: layout object that manages the layout-related attributes for a given item in a collection view.
     func add(attribute: UICollectionViewLayoutAttributes) {
         attributes.append(attribute)
     }
-
-    func tagLayout(collectionViewWidth: CGFloat) {
+    
+    func labelLayout(collectionViewWidth: CGFloat) {
         let padding = 10
         var offset = padding
         for attribute in attributes {
@@ -30,15 +33,15 @@ class Row {
     }
 }
 
+/// Custom flow layout for collection view.
 class CustomFlowLayout: UICollectionViewFlowLayout {
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let attributes = super.layoutAttributesForElements(in: rect) else {
             return nil
         }
-
         var rows = [Row]()
         var currentRowY: CGFloat = -1
-
+        
         for attribute in attributes {
             if currentRowY != attribute.frame.origin.y {
                 currentRowY = attribute.frame.origin.y
@@ -46,8 +49,7 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
             }
             rows.last?.add(attribute: attribute)
         }
-
-        rows.forEach { $0.tagLayout(collectionViewWidth: collectionView?.frame.width ?? 0) }
+        rows.forEach { $0.labelLayout(collectionViewWidth: collectionView?.frame.width ?? 0) }
         return rows.flatMap { $0.attributes }
     }
 }

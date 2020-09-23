@@ -108,10 +108,10 @@
 		764469FD2517903800CCC9B5 /* Calculator View */ = {
 			isa = PBXGroup;
 			children = (
+				76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */,
 				3ECC9F1E251B15D100264318 /* CalculatorVC.xib */,
 				3ECC9F1D251B15D100264318 /* OperationCell.swift */,
 				3ECC9F1C251B15D000264318 /* OperationCell.xib */,
-				76231BED2517A13B00A3D1B9 /* CalculatorVC.swift */,
 			);
 			path = "Calculator View";
 			sourceTree = "<group>";

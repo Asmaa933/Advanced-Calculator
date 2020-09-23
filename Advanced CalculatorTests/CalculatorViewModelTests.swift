@@ -11,6 +11,7 @@ import XCTest
 
 /// This is a class to test CalculatorViewModel functions
 class CalculatorViewModelTests: XCTestCase {
+    // MARK: - Variables
     var operationsStore: OperationStore!
     
     override func setUpWithError() throws {
@@ -23,7 +24,7 @@ class CalculatorViewModelTests: XCTestCase {
     
     /**
      This function putting dummy data in array
-     - returns: the total result for array
+     - returns: The total result for array
      */
     @discardableResult
     func skip_fillArray() -> Double{
@@ -136,6 +137,11 @@ class CalculatorViewModelTests: XCTestCase {
     
     /**
      This function tests calculating result
+     - Parameters:
+     - number1: First number
+     - operation: operation
+     - number2: Second number
+     - Returns: the result of operation
      */
     func calculate(number1: Double,operation: String,number2: Double) -> Double{
         var result = 0.0
@@ -195,9 +201,10 @@ class CalculatorViewModelTests: XCTestCase {
         XCTAssertTrue(operationsStore.getOperatorionsArray().count == 4)
     }
     
-    
     /**
      This function  splitting arithmetic operator from number
+     - Parameter operation: String represent arithmetic operator and number
+     - Returns: Tuple has arithmetic operator and number values
      */
     func skip_splitOperationString(operation: String) -> (String,Double){
         let splittedArr = operation.split(separator: " ")
@@ -206,6 +213,8 @@ class CalculatorViewModelTests: XCTestCase {
         return (oper,number)
     }
     
+    
+    /// This function test reset calculator 
     func testResetCalculator(){
         skip_fillArray()
         operationsStore.removeAllOperations()
